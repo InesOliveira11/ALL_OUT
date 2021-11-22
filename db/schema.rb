@@ -10,15 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_11_22_172704) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  
   create_table "questions", force: :cascade do |t|
     t.string "question"
     t.string "answer_1"
     t.string "answer_2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.float "price"
+    t.float "rating"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,6 +44,10 @@ ActiveRecord::Schema.define(version: 2021_11_22_172704) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "birth_date"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
