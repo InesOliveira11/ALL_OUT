@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2021_11_22_175420) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "activity_tags", force: :cascade do |t|
+    t.string "tag_name"
+    t.bigint "question_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_activity_tags_on_activity_id"
+    t.index ["question_id"], name: "index_activity_tags_on_question_id"
+  end
+
   create_table "answers", force: :cascade do |t|
     t.string "selected_answer"
     t.bigint "question_id", null: false
@@ -36,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_175420) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
   
+
   create_table "bookings", force: :cascade do |t|
     t.datetime "date"
     t.bigint "user_id", null: false
@@ -45,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_175420) do
     t.index ["activity_id"], name: "index_bookings_on_activity_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-  
+
   create_table "favourites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "activity_id", null: false
@@ -61,6 +72,15 @@ ActiveRecord::Schema.define(version: 2021_11_22_175420) do
     t.string "answer_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.float "rating"
+    t.string "content"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,13 +100,17 @@ ActiveRecord::Schema.define(version: 2021_11_22_175420) do
   end
 
 
+  add_foreign_key "activity_tags", "activities"
+  add_foreign_key "activity_tags", "questions"
+
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
-
+  
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
-
+  
   add_foreign_key "favourites", "activities"
   add_foreign_key "favourites", "users"
-
+  
+  add_foreign_key "reviews", "bookings"
 end
