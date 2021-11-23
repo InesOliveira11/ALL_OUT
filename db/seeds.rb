@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+question = Question.create([ { question: 'What do you prefer?', answer_1: "indoors", answer_2: "outdoors"} ])
+
+User.destroy_all
+
+user = User.new(
+  first_name: "Admin",
+  last_name: "Admin",
+  email: "admin@com",
+  password: "123456admin",
+  address: "138 Kingsland Rd",
+  birth_date: "19.07.1991"
+)
+user.save!
+
+activity = Activity.new(
+  title: "New Activity",
+  description: "Have fun at le Wagon",
+  price: "20",
+  rating: "4.5",
+  location: "138 Kingsland Rd"
+)
+activity.save!
