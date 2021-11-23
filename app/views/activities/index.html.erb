@@ -17,6 +17,7 @@
         <td><%= activity.description %></td>
         <td><%= activity.price %></td>
         <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Liked', activity_favourites_path(activity), method: :post %></td>
       </tr>
     <% end %>
   </tbody>

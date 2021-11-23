@@ -11,6 +11,7 @@ question_indoors = Question.create([ { question: 'What do you prefer?', answer_1
 question_outdoors = Question.create([ { question: 'What do you prefer?', answer_1: "hiking", answer_2: "visiting"} ])
 
 User.destroy_all
+Activity.destroy_all
 
 user = User.new(
   first_name: "Admin",
