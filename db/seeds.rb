@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 question = Question.create([ { question: 'What do you prefer?', answer_1: "indoors", answer_2: "outdoors"} ])
+question_indoors = Question.create([ { question: 'What do you prefer?', answer_1: "food", answer_2: "drinks"} ])
+question_outdoors = Question.create([ { question: 'What do you prefer?', answer_1: "hiking", answer_2: "visiting"} ])
 
 User.destroy_all
+Activity.destroy_all
 
 user = User.new(
   first_name: "Admin",
