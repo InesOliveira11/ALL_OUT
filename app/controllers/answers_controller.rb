@@ -11,7 +11,11 @@ class AnswersController < ApplicationController
     @answer.question = @question
     @answer.user = current_user
     if @answer.save!
-      redirect_to new_question_answer_path(params[:answer][:next])
+      if Question.exists?(params[:answer][:next])
+        redirect_to new_question_answer_path(params[:answer][:next])
+      else
+        redirect_to activities_path
+      end
     else
       render :new
     end
