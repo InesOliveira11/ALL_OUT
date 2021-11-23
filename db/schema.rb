@@ -81,24 +81,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_180953) do
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
-  create_table "answers", force: :cascade do |t|
-    t.string "selected_answer"
-    t.bigint "question_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string "question"
-    t.string "answer_1"
-    t.string "answer_2"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
