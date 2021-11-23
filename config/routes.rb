@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   
   resources :bookings, only: [:show]
+  resources :reviews
   
   resources :questions do
     resources :answers, only: [:new, :create]
