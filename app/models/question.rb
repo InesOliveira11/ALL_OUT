@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-  belongs_to :answer
-  belongs_to :activity_tag
+  has_many :answers
+  has_many :activity_tags
 end
