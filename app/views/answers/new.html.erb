@@ -1,0 +1,6 @@
+<%= @question.question %>
+
+<%= simple_form_for [ @question, @answer ] do |f| %>
+  <%= f.input :selected_answer, as: :radio_buttons, collection:  ["yes", "no"] %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
