@@ -19,8 +19,5 @@ require("channels")
 import "controllers"
 import "bootstrap"
 
-import { navbarFunctionality } from "./navbar_functionality"
-
 document.addEventListener('turbolinks:load', () => {
-  navbarFunctionality();
 })
