@@ -66,8 +66,10 @@ activity = Activity.new(
   description: "Have fun at le Wagon",
   price: "20",
   rating: "4.5",
-  location: "138 Kingsland Rd"
+  location: "138 Kingsland Rd, London"
 )
+file = URI.open("https://www1.chester.ac.uk/sites/default/files/styles/hero/public/Events%20Management%20festival%20image.jpg")
+activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
 
 activity = Activity.new(

@@ -13,6 +13,13 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
+      <% if activity.photo.present? %>
+        <div class="background-card-image" style="background-image: url('<%= cl_image_path activity.photo.key%>')"></div>
+        <h1>Success</h1>
+      <% else %>
+        <div class="background-card-image" style="background-image: url('https://www.google.com/search?q=gamepad+pics&rlz=1C5CHFA_enGB965GB970&sxsrf=AOaemvJXEHAstqGDkmq1cnNE9K6k5QoS7w:1637168036711&tbm=isch&source=iu&ictx=1&fir=9QBwmvn9zU6wKM%252C-XbVcD_SxsDUFM%252C_%253BgoP0jiTaQD0T6M%252C-XbVcD_SxsDUFM%252C_%253BDHGmIej7RXAG2M%252Cxt5Q1pzjs3e4nM%252C_%253BKdtvO-1ZrDYGjM%252Cxt5Q1pzjs3e4nM%252C_%253BEPCVXhLTnW8LEM%252Cr_MzRScF8qVIFM%252C_%253BZNxxdZ4AHPWWXM%252C-XbVcD_SxsDUFM%252C_%253BSctBvfuv7b4fZM%252CiQb9JW-r1jDMuM%252C_%253BXY_PWHnozN4m4M%252CnEBmrgGtHKbm5M%252C_%253ByVGp75ZGg_R0DM%252Cj2AnDOpsi4HIgM%252C_%253Bf9GlH3UEzyVh7M%252CFtPCU0F5DxOb6M%252C_%253Bm5a4PZMn4FhR1M%252C-XbVcD_SxsDUFM%252C_%253BM8q7bH8szI46BM%252CFu81baY-gA0EsM%252C_%253BE7Hku6M3eGstVM%252CLRFU9Q1WktTnZM%252C_%253B-1ELS9-6nmywzM%252CrS_7-1m8XOlSgM%252C_&vet=1&usg=AI4_-kT9qTbZuUp2EefuH1FzGGxPr8dJLg&sa=X&ved=2ahUKEwiQyY-a7p_0AhWHUcAKHfE_D5oQ9QF6BAgXEAE#imgrc=yVGp75ZGg_R0DM')"></div>
+        <h1>Failure</h1>
+      <% end %>
         <td><%= activity.title %></td>
         <td><%= activity.description %></td>
         <td><%= activity.price %></td>
