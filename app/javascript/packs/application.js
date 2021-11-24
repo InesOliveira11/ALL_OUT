@@ -18,3 +18,6 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+
+document.addEventListener('turbolinks:load', () => {
+})
