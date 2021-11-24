@@ -1,11 +1,16 @@
 class ActivitiesController < ApplicationController
-
   def index
     @activities = Activity.all
   end
 
   def show
     @activity = Activity.find(params[:id])
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { activity: @activity }),
+      image_url: helpers.asset_url("location1.png")
+    }]
   end
 
   def new
@@ -25,6 +30,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:title, :description, :price, :rating, :location)
+    params.require(:activity).permit(:title, :description, :price, :rating, :location, :photo)
   end
 end

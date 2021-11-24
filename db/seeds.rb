@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 question = Question.create([ { question: 'What do you prefer?', answer_1: "indoors", answer_2: "outdoors"} ])
 question_indoors = Question.create([ { question: 'What do you prefer?', answer_1: "food", answer_2: "drinks"} ])
@@ -18,7 +19,7 @@ user = User.new(
   last_name: "Admin",
   email: "admin@com",
   password: "123456admin",
-  address: "138 Kingsland Rd",
+  address: "138 Kingsland Rd, London",
   birth_date: "19.07.1991"
 )
 user.save!
@@ -28,6 +29,8 @@ activity = Activity.new(
   description: "Have fun at le Wagon",
   price: "20",
   rating: "4.5",
-  location: "138 Kingsland Rd"
+  location: "138 Kingsland Rd, London"
 )
+file = URI.open("https://www1.chester.ac.uk/sites/default/files/styles/hero/public/Events%20Management%20festival%20image.jpg")
+activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
