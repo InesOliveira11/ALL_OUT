@@ -198,6 +198,6 @@ activity = Activity.new(
   location: "79-85 Old Brompton Road, SW7 3LD"
 )
 create_activity_tags("Indoors", "Activity", "Arts", "TV")
-file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
+file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
 activity.photo.attach(io: file, filetag_name: 'poster.png', content_type: 'image/png')
 activity.save!
