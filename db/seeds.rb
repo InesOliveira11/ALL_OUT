@@ -1,4 +1,5 @@
 require 'open-uri'
+
 last_question_id = Question.last.id
 Question.destroy_all
 
@@ -81,110 +82,110 @@ activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png
 activity.save!
 create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
 
-activity = Activity.new(
-  title: "The murdér express",
-  description: "Enjoy a meal cooked by a MasterChef inside a 19th century train carriage on The Murdér Express.",
-  price: "65",
-  rating: "3.0",
-  location: "Arch 63 Pedley Street, E1 5BW"
-)
-file = URI.open("https://media.timeout.com/images/105449407/1372/772/image.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
+# activity = Activity.new(
+#   title: "The murdér express",
+#   description: "Enjoy a meal cooked by a MasterChef inside a 19th century train carriage on The Murdér Express.",
+#   price: "65",
+#   rating: "3.0",
+#   location: "Arch 63 Pedley Street, E1 5BW"
+# )
+# file = URI.open("https://media.timeout.com/images/105449407/1372/772/image.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
 
-activity = Activity.new(
-  title: "Mercato Metropolitano",
-  description: "Mercato Metropolitano is London’s first sustainable community market. Has incubated more than 40 food and beverage businesses, a delicatessen with sustainably sourced products from local farmers and artisans, a unique cinema experience, a communal kitchen and several circular economy concepts including a Bavarian micro-brewery.",
-  price: "20",
-  rating: "5.0",
-  location: "42 Newington Causeway, London SE1 6DR"
-)
-file = URI.open("https://www.efanews.eu/resources/800x800/868cfa3c866242613830e71caa4f6734.jpg.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
+# activity = Activity.new(
+#   title: "Mercato Metropolitano",
+#   description: "Mercato Metropolitano is London’s first sustainable community market. Has incubated more than 40 food and beverage businesses, a delicatessen with sustainably sourced products from local farmers and artisans, a unique cinema experience, a communal kitchen and several circular economy concepts including a Bavarian micro-brewery.",
+#   price: "20",
+#   rating: "5.0",
+#   location: "42 Newington Causeway, London SE1 6DR"
+# )
+# file = URI.open("https://www.efanews.eu/resources/800x800/868cfa3c866242613830e71caa4f6734.jpg.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
 
-activity = Activity.new(
-  title: "Bang Bang - Oriental Foodhall",
-  description: "The Bang Bang Oriental Foodhall is the newest and largest Asian food court in London, and boasts the widest range of specialist Asian restaurants in the whole of the UK.",
-  price: "40",
-  rating: "3.0",
-  location: "399 Edgware Road, Colindale, London NW9 0FH"
-)
-file = URI.open("https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2017/07/27045341/bang-bang-oriental-food-hall-1024x683.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
+# activity = Activity.new(
+#   title: "Bang Bang - Oriental Foodhall",
+#   description: "The Bang Bang Oriental Foodhall is the newest and largest Asian food court in London, and boasts the widest range of specialist Asian restaurants in the whole of the UK.",
+#   price: "40",
+#   rating: "3.0",
+#   location: "399 Edgware Road, Colindale, London NW9 0FH"
+# )
+# file = URI.open("https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2017/07/27045341/bang-bang-oriental-food-hall-1024x683.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
 
-activity = Activity.new(
-  title: "Cahoots",
-  description: "Cahoots is a 1940s-themed bar located in the heart of London’s Soho. Set inside an abandoned train station, the scoundrels of this station-speakeasy serve up spiffing cocktails, jolly-good rations and live swinging entertainment seven days a week.",
-  price: "30",
-  rating: "5.0",
-  location: "13 Kingly Ct, Carnaby, London W1B 5PW"
-)
-file = URI.open("https://www.theworlds50best.com/discovery/filestore/jpg/Cahoots-London-UK-03.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
+# activity = Activity.new(
+#   title: "Cahoots",
+#   description: "Cahoots is a 1940s-themed bar located in the heart of London’s Soho. Set inside an abandoned train station, the scoundrels of this station-speakeasy serve up spiffing cocktails, jolly-good rations and live swinging entertainment seven days a week.",
+#   price: "30",
+#   rating: "5.0",
+#   location: "13 Kingly Ct, Carnaby, London W1B 5PW"
+# )
+# file = URI.open("https://www.theworlds50best.com/discovery/filestore/jpg/Cahoots-London-UK-03.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
 
-activity = Activity.new(
-  title: "The Cauldron",
-  description: "The Cauldron is an immersive cocktail-making class where guests use science and technology to make magic real. Come and brew some molecular cocktails with working magic wands!",
-  price: "35",
-  rating: "4.0",
-  location: "5d Stoke Newington Rd, London N16 8BH"
-)
-file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
+# activity = Activity.new(
+#   title: "The Cauldron",
+#   description: "The Cauldron is an immersive cocktail-making class where guests use science and technology to make magic real. Come and brew some molecular cocktails with working magic wands!",
+#   price: "35",
+#   rating: "4.0",
+#   location: "5d Stoke Newington Rd, London N16 8BH"
+# )
+# file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
 
-activity = Activity.new(
-  title: "Cirque le Soir",
-  description: "Plush, circus-themed nightclub with DJs, burlesque snake charmers, fire eaters and indoor funfair.",
-  price: "150",
-  rating: "4.0",
-  location: "15-21 Ganton St, Carnaby, London W1F 9BN"
-)
-file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
+# activity = Activity.new(
+#   title: "Cirque le Soir",
+#   description: "Plush, circus-themed nightclub with DJs, burlesque snake charmers, fire eaters and indoor funfair.",
+#   price: "150",
+#   rating: "4.0",
+#   location: "15-21 Ganton St, Carnaby, London W1F 9BN"
+# )
+# file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
 
-activity = Activity.new(
-  title: "Silent Disco at The View from The Shard",
-  description: "The silent disco phenomenon reaches new heights at these exclusive Time Out events. Pick your vibe and choose your side as three DJs battle it out over separate wireless channels, playing the best in pop, rock and party classics, while you dance the night away 1,000ft in th air.",
-  price: "40",
-  rating: "5.0",
-  location: "32 London Bridge St, London SE1 9SG"
-)
-file = URI.open("https://d32dbz94xv1iru.cloudfront.net/resize/1/images/events/by_uuid/53/53dede37-0194-475f-9420-04f8f32b2236-1500x900.jpg?width=960")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
+# activity = Activity.new(
+#   title: "Silent Disco at The View from The Shard",
+#   description: "The silent disco phenomenon reaches new heights at these exclusive Time Out events. Pick your vibe and choose your side as three DJs battle it out over separate wireless channels, playing the best in pop, rock and party classics, while you dance the night away 1,000ft in th air.",
+#   price: "40",
+#   rating: "5.0",
+#   location: "32 London Bridge St, London SE1 9SG"
+# )
+# file = URI.open("https://d32dbz94xv1iru.cloudfront.net/resize/1/images/events/by_uuid/53/53dede37-0194-475f-9420-04f8f32b2236-1500x900.jpg?width=960")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
 
-activity = Activity.new(
-  title: "Money Heist - The Experience",
-  description: "In Money Heist: The Experience you’ll live out the first ever international robbery in person. Take part in this immersive experience full of special effects and endless surprises.",
-  price: "45",
-  rating: "4.0",
-  location: "79-85 Old Brompton Road, SW7 3LD"
-)
-file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
+# activity = Activity.new(
+#   title: "Money Heist - The Experience",
+#   description: "In Money Heist: The Experience you’ll live out the first ever international robbery in person. Take part in this immersive experience full of special effects and endless surprises.",
+#   price: "45",
+#   rating: "4.0",
+#   location: "79-85 Old Brompton Road, SW7 3LD"
+# )
+# file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
 
-activity = Activity.new(
-  title: "Sherlock Holmes - The official Live Game",
-  description: "Experience our immersive Sherlock Escape Room, and solve London's new murder mystery.",
-  price: "40",
-  rating: "4.0",
-  location: "79-85 Old Brompton Road, SW7 3LD"
-)
-file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
-activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-activity.save!
-create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
+# activity = Activity.new(
+#   title: "Sherlock Holmes - The official Live Game",
+#   description: "Experience our immersive Sherlock Escape Room, and solve London's new murder mystery.",
+#   price: "40",
+#   rating: "4.0",
+#   location: "79-85 Old Brompton Road, SW7 3LD"
+# )
+# file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
+# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
+# activity.save!
+# create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")

@@ -1,2 +1,20 @@
-<h1>Profile</h1>
-<%= @user.first_name %>
+<p class="message">
+  Welcome
+  <strong><%= @user.first_name %></strong>
+  to your profile page!
+</p>
+<img style="width: 70px;" src="https://cdn-icons.flaticon.com/png/512/2423/premium/2423916.png?token=exp=1637860102~hmac=9840961a0d5a67ba23dd561af675f3b8" alt="">
+<br>
+<%= @user.first_name %><br>
+<%= @user.last_name %><br>
+<%= @user.birth_date %><br>
+<%= @user.email %><br>
+<%= @user.address %><br>
+<p class="message">
+  <strong>Your future adventures are about to start!</strong>
+</p>
+
+
+
+
+<%= link_to 'Back', activities_path, class:"btn btn-black m-3" %>
