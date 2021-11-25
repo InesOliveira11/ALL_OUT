@@ -1,4 +1,9 @@
-<% @questions.question %>
-<%= question.answer_1 %>
-<%= question.answer_2 %>
-<% end %>
+<div><h1><% @question.question %></h1></div>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= @question.answer_1 %>
+  <%= cl_image_tag @question.photos.first.key %>
+</div>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= @question.answer_2 %>
+  <%= cl_image_tag @question.photos.last.key %>
+</div>
