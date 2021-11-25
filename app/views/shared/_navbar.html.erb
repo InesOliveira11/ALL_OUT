@@ -3,7 +3,7 @@
     <i class="fas fa-home"></i>
   <% end %>
 
-  <%= link_to activities_path, class: "p-3 default-color #{ 'nav-active-purple' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
+  <%= link_to favourites_activities_path, class: "p-3 default-color #{ 'nav-active-purple' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
     <i class="fas fa-heart"></i>
   <% end %>
   <i class="fas fa-search p-3 default-color"></i>
