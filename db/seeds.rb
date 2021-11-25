@@ -2,25 +2,81 @@ require 'open-uri'
 last_question_id = Question.last.id
 Question.destroy_all
 
-question_1 = Question.create([ { question: 'What do you prefer?', answer_1: "Indoors", next_question_1: last_question_id + 2, answer_2: "Outdoors", next_question_2: last_question_id + 3} ])
+question_1 = Question.create(question: 'What do you prefer today?', answer_1: "Indoors", next_question_1: last_question_id + 2, answer_2: "Outdoors", next_question_2: last_question_id + 3)
 p question_1
-question_2 = Question.create([ { question: 'What do you prefer?', answer_1: "Food/Drinks", next_question_1: last_question_id + 4, answer_2: "Experiences", next_question_2: last_question_id + 5} ])
-p question_2
-question_3 = Question.create([ { question: 'What do you prefer?', answer_1: "Food/Drinks", next_question_1: last_question_id + 6, answer_2: "Experiences", next_question_2: last_question_id + 7} ])
-p question_3
-question_4 = Question.create([ { question: 'What do you prefer?', answer_1: "Hungry", next_question_1: last_question_id + 8, answer_2: "Thirsty", next_question_2: last_question_id + 9} ])
-p question_4
-question_5 = Question.create([ { question: 'What do you prefer?', answer_1: "Sports", next_question_1: last_question_id + 10, answer_2: "Arts", next_question_2: last_question_id + 11} ])
-question_6 = Question.create([ { question: 'What do you prefer?', answer_1: "Hungry", next_question_1: last_question_id + 12, answer_2: "Thirsty", next_question_2: last_question_id + 13} ])
-question_7 = Question.create([ { question: 'What do you prefer?', answer_1: "Sports", next_question_1: last_question_id + 14, answer_2: "Arts", next_question_2: last_question_id + 15} ])
-question_8 = Question.create([ { question: 'What do you prefer?', answer_1: "Restaurant", answer_2: "Market"} ])
-question_9 = Question.create([ { question: 'What do you prefer?', answer_1: "Bar", answer_2: "Club"} ])
-question_10 = Question.create([ { question: 'What do you prefer?', answer_1: "Adrenaline", answer_2: "Social"} ])
-question_11 = Question.create([ { question: 'What do you prefer?', answer_1: "Film", answer_2: "Music"} ])
-question_12 = Question.create([ { question: 'What do you prefer?', answer_1: "Restaurant", answer_2: "Market"} ])
-question_13 = Question.create([ { question: 'What do you prefer?', answer_1: "Bar", answer_2: "Club"} ])
-question_14 = Question.create([ { question: 'What do you prefer?', answer_1: "Adrenaline", answer_2: "Social"} ])
-question_15 = Question.create([ { question: 'What do you prefer?', answer_1: "Film", answer_2: "Music"} ])
+question_1.photos.attach(io: URI.open("https://source.unsplash.com/featured/?indoors"), filename: 'poster1.png', content_type: 'image/png')
+question_1.photos.attach(io: URI.open("https://source.unsplash.com/featured/?outdoors"), filename: 'poster2.png', content_type: 'image/png')
+question_1.save!
+
+question_2 = Question.create(question: 'Are you looking for?', answer_1: "Food/Drinks", next_question_1: last_question_id + 4, answer_2: "Experiences", next_question_2: last_question_id + 5)
+question_2.photos.attach(io: URI.open("https://source.unsplash.com/featured/?meal,indoors"), filename: 'poster1.png', content_type: 'image/png')
+question_2.photos.attach(io: URI.open("https://source.unsplash.com/featured/?experiences,indoors"), filename: 'poster2.png', content_type: 'image/png')
+question_2.save!
+
+question_3 = Question.create(question: 'Are you looking for?', answer_1: "Food/Drinks", next_question_1: last_question_id + 6, answer_2: "Experiences", next_question_2: last_question_id + 7)
+question_3.photos.attach(io: URI.open("https://source.unsplash.com/featured/?meal,outdoors"), filename: 'poster1.png', content_type: 'image/png')
+question_3.photos.attach(io: URI.open("https://source.unsplash.com/featured/?experiences,oudoors"), filename: 'poster2.png', content_type: 'image/png')
+question_3.save!
+
+question_4 = Question.create(question: 'Are you feeling...?', answer_1: "Hungry", next_question_1: last_question_id + 8, answer_2: "Thirsty", next_question_2: last_question_id + 9)
+question_4.photos.attach(io: URI.open("https://source.unsplash.com/featured/?hungry"), filename: 'poster1.png', content_type: 'image/png')
+question_4.photos.attach(io: URI.open("https://source.unsplash.com/featured/?thirsty"), filename: 'poster2.png', content_type: 'image/png')
+question_4.save!
+
+question_5 = Question.create(question: 'What type of experience would you like to do?', answer_1: "Sports", next_question_1: last_question_id + 10, answer_2: "Arts", next_question_2: last_question_id + 11)
+question_5.photos.attach(io: URI.open("https://source.unsplash.com/featured/?sports,indoors"), filename: 'poster1.png', content_type: 'image/png')
+question_5.photos.attach(io: URI.open("https://source.unsplash.com/featured/?arts,indoors"), filename: 'poster2.png', content_type: 'image/png')
+question_5.save!
+
+question_6 = Question.create(question: 'Are you feeling...?', answer_1: "Hungry", next_question_1: last_question_id + 12, answer_2: "Thirsty", next_question_2: last_question_id + 13)
+question_6.photos.attach(io: URI.open("https://source.unsplash.com/featured/?hungry"), filename: 'poster1.png', content_type: 'image/png')
+question_6.photos.attach(io: URI.open("https://source.unsplash.com/featured/?thirsty"), filename: 'poster2.png', content_type: 'image/png')
+question_6.save!
+
+question_7 = Question.create(question: 'What type of experience would you like to do?', answer_1: "Sports", next_question_1: last_question_id + 14, answer_2: "Arts", next_question_2: last_question_id + 15)
+question_7.photos.attach(io: URI.open("https://source.unsplash.com/featured/?sports,outdoors"), filename: 'poster1.png', content_type: 'image/png')
+question_7.photos.attach(io: URI.open("https://source.unsplash.com/featured/?arts,outdoors"), filename: 'poster2.png', content_type: 'image/png')
+question_7.save!
+
+question_8 = Question.create(question: 'Are you up for?', answer_1: "Restaurant", answer_2: "Market")
+question_8.photos.attach(io: URI.open("https://source.unsplash.com/featured/?restaurant,indoors"), filename: 'poster1.png', content_type: 'image/png')
+question_8.photos.attach(io: URI.open("https://source.unsplash.com/featured/?foodmarket,indoors"), filename: 'poster2.png', content_type: 'image/png')
+question_8.save!
+
+question_9 = Question.create(question: 'Are you up for?', answer_1: "Bar", answer_2: "Club")
+question_9.photos.attach(io: URI.open("https://source.unsplash.com/featured/?bar"), filename: 'poster1.png', content_type: 'image/png')
+question_9.photos.attach(io: URI.open("https://source.unsplash.com/featured/?experiences,clubbing"), filename: 'poster2.png', content_type: 'image/png')
+question_9.save!
+
+question_10 = Question.create(question: 'Are you up for?', answer_1: "Adrenaline", answer_2: "Social")
+question_10.photos.attach(io: URI.open("https://source.unsplash.com/featured/?adrenaline"), filename: 'poster1.png', content_type: 'image/png')
+question_10.photos.attach(io: URI.open("https://source.unsplash.com/featured/?social"), filename: 'poster2.png', content_type: 'image/png')
+question_10.save!
+
+question_11 = Question.create(question: 'Are you up for?', answer_1: "Film", answer_2: "Music")
+question_11.photos.attach(io: URI.open("https://source.unsplash.com/featured/?film"), filename: 'poster1.png', content_type: 'image/png')
+question_11.photos.attach(io: URI.open("https://source.unsplash.com/featured/?music"), filename: 'poster2.png', content_type: 'image/png')
+question_11.save!
+
+question_12 = Question.create(question: 'Are you up for?', answer_1: "Restaurant", answer_2: "Market")
+question_12.photos.attach(io: URI.open("https://source.unsplash.com/featured/?restaurant,outdoors"), filename: 'poster1.png', content_type: 'image/png')
+question_12.photos.attach(io: URI.open("https://source.unsplash.com/featured/?foodmarket,outdoors"), filename: 'poster2.png', content_type: 'image/png')
+question_12.save!
+
+question_13 = Question.create(question: 'Are you up for?', answer_1: "Bar", answer_2: "Club")
+question_13.photos.attach(io: URI.open("https://source.unsplash.com/featured/?bar,outdoors"), filename: 'poster1.png', content_type: 'image/png')
+question_13.photos.attach(io: URI.open("https://source.unsplash.com/featured/?clubbing,outdoors"), filename: 'poster2.png', content_type: 'image/png')
+question_13.save!
+
+question_14 = Question.create(question: 'Are you up for?', answer_1: "Adrenaline", answer_2: "Social")
+question_14.photos.attach(io: URI.open("https://source.unsplash.com/featured/?adrenaline"), filename: 'poster1.png', content_type: 'image/png')
+question_14.photos.attach(io: URI.open("https://source.unsplash.com/featured/?social,outdoors"), filename: 'poster2.png', content_type: 'image/png')
+question_14.save!
+
+question_15 = Question.create(question: 'Are you up for?', answer_1: "Film", answer_2: "Music")
+question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?cinema,outdoors"), filename: 'poster1.png', content_type: 'image/png')
+question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?musicfestival"), filename: 'poster2.png', content_type: 'image/png')
+question_15.save!
 
 User.destroy_all
 Activity.destroy_all
@@ -57,17 +113,6 @@ user = User.new(
   birth_date: "19.07.1991"
 )
 user.save!
-
-# activity = Activity.new(
-#   title: "New Activity",
-#   description: "Have fun at le Wagon",
-#   price: "20",
-#   rating: "4.5",
-#   location: "138 Kingsland Rd, London"
-# )
-# file = URI.open("https://www1.chester.ac.uk/sites/default/files/styles/hero/public/Events%20Management%20festival%20image.jpg")
-# activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
-# activity.save!
 
 activity = Activity.new(
   title: "Dans le noir?",
