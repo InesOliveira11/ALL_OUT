@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   resources :users
 
   resources :activities, only: %i[index show] do
-    resources :favourites, only: %i[index create destroy]
+    resources :favourites, only: %i[create destroy]
     resources :bookings, only: [:new, :create]
   end
 
   resources :bookings, only: [:show]
   resources :reviews
+  resources :favourites, only: %i[index]
 
   resources :questions do
     resources :answers, only: [:new, :create]
