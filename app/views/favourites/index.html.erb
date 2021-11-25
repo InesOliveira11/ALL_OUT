@@ -1,5 +1,13 @@
-<h1>You are on index page of Favourites</h1>
 
-<% @favourites.each do |favourite| %>
-<%= favourite.activity.title %><br>
-<% end %>
+<div class="container">
+<h1>You are on index page of Favourites</h1>
+  <div class="row">
+    <% @favourites.each do |favourite| %>
+      <div class="col-6 mb-2">
+        <div class="card-favourites" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path favourite.activity.photo.key %>)">
+          <%= favourite.activity.title %><br>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
