@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:show]
   resources :reviews
+  resources :favourites, only: %i[index]
 
   resources :questions do
     resources :answers, only: [:new, :create]
