@@ -1,16 +1,16 @@
-<h1>Activities</h1>
-<% @activities.each do |activity| %>
-  <div class="card mb-5">
-    <div class="card__face card__face--front">
-        <div class="card-body" style="background-size: cover; justify-content: center; align-items: center; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path activity.photo.key %>)">
-          <div class="card-message">
-            <h2 class="card-title"><%= activity.title %></h2></div>
-              <p  class="card-body"><%= activity.description %></p>
-              <h2>￡<%= activity.price %></h2>
-              <br>
-            <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class:"btn btn-success" %>
-          </div>
+
+<div class="card">
+  <div class="card-content">
+    <% @activities.each do |activity| %>
+      <%= cl_image_tag activity.photo.key, class: "card" %>
+        <h2 class="card-title"><%= activity.title %></h2></div>
+        <p class="card-body"><%= activity.description %></p>
+        <p class="card-body">￡<%= activity.price %></p>
+        <br>
+        <div class="button">
+        <%= link_to 'Liked', activity_favourites_path(activity), method: :post %>
         </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+

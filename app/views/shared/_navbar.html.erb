@@ -6,7 +6,7 @@
     <i class="fas fa-heart"></i>
   <% end %>
   <i class="fas fa-search p-3 default-color"></i>
-  <%= link_to users_path, class: "p-3 default-color #{ 'nav-active-yellow' if params[:controller] == 'users' && params[:action] == 'index' } " do %>
+  <%= link_to user_path(current_user), class: "p-3 default-color #{ 'nav-active-yellow' if params[:controller] == 'users' && params[:action] == 'show' } " do %>
     <i class="fas fa-user"></i>
   <% end %>
 </div>

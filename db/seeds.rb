@@ -1,4 +1,5 @@
 require 'open-uri'
+
 last_question_id = Question.last.id
 Question.destroy_all
 
