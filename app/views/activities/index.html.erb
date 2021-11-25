@@ -1,37 +1,16 @@
 <h1>Activities</h1>
-<div class="container m-0 p-0">
-  <div class="row mt-4">
+<div class="card">
+  <div class="card-content">
     <% @activities.each do |activity| %>
-    <%= link_to activity_path(activity) do %>
-      <div class="col-4 p-3">
-        <div class="card-trip-show">
-          <% if activity.photo.present? %>
-            <div class="background-card-image" style="background-image: url('<%= cl_image_path activity.photo.key%>')"></div>
-          <% else %>
-            <div class="background-card-image" style="background-image: url('https://media.istockphoto.com/vectors/party-time-vector-id500577691?k=20&m=500577691&s=170667a&w=0&h=ashxyvfVoDrjtTpFobu7aFxL7UJqxrvYF1hPcSzv1Vs=')"></div>
-          <% end %>
-          <% end %>
-            <div class="card-trip-infos m-2">
-              <h2 class="m-2"><%= activity.title %></h2>
-              <p  class="m-2"><%= activity.description %></p>
-              </div>
-            <div class="card-trip-pricing">
+          <%= cl_image_tag activity.photo.key, class: "card" %>
+            <h2 class="card-title"><%= activity.title %></h2></div>
+              <p  class="card-body"><%= activity.description %></p>
               <h2>￡<%= activity.price %></h2>
               <br>
+            <div class="button">
             <%= link_to 'Liked', activity_favourites_path(activity), method: :post %>
             </div>
           </div>
-        </div>
-      </div>
     <% end %>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-content">
-    <h2 class="card-title">Something awesome</h2>
-    <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolore excepturi sapiente.</p>
-  <a href="#" class="button">Learn more</a>
   </div>
 </div>
