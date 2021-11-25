@@ -1,5 +1,4 @@
 require 'open-uri'
-
 last_question_id = Question.last.id
 Question.destroy_all
 
@@ -194,7 +193,7 @@ activity = Activity.new(
   rating: "4.0",
   location: "15-21 Ganton St, Carnaby, London W1F 9BN"
 )
-file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
+file = URI.open("https://www.royist.com/wp-content/uploads/2016/11/cirquelesoir-london-royist2-1200x900.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
 create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
