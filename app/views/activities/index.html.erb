@@ -1,5 +1,6 @@
+<h1 style="text-align:center;">Activities</h1>
 <% @activities.each do |activity| %>
-  <div class="flip">
+  <div class="flip d-flex flex-column">
     <div class="front" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
       <h1 class="text-shadow"><%= activity.title %></h1>
       <div class="mb-1" style="background-color: #313131; border-radious: 5px; padding: 5px;">
