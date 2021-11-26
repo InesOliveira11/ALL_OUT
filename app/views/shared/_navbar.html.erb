@@ -1,6 +1,6 @@
 <div class="bottom-nav  d-flex justify-content-evenly">
-    <%= link_to root_path, class: "p-3 default-color #{ 'nav-active-pink' if params[:controller] == 'pages' && params[:action] == 'home' } " do %>
-      <i class="fas fa-home"></i>
+    <%= link_to activities_path, class: "p-3 default-color #{ 'nav-active-pink' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
+      <i class="fas fa-smile-wink"></i>
     <% end %>
     <%= link_to favourites_path, class: "p-3 default-color #{ 'nav-active-purple' if params[:controller] == 'favourites' && params[:action] == 'index' } " do %>
       <i class="fas fa-heart"></i>

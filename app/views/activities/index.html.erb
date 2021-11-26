@@ -1,12 +1,25 @@
-<div>
-  <% @activities.each do |activity| %>
-    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path activity.photo.key %>)">
-      <h2 class="card-title"><%= activity.title %></h2></div>
-      <p class="card-body"><%= activity.rating %></p>
-      <p class="card-body"><%= activity.description %></p>
-      <p class="card-body">￡<%= activity.price %></p>
-      <br>
+<h1 style="text-align:center;">Activities</h1>
+<% @activities.each do |activity| %>
+  <div class="flip d-flex flex-column">
+    <div class="front" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
+      <h1 class="text-shadow"><%= activity.title %></h1>
+      <div class="mb-1" style="background-color: #313131; border-radious: 5px; padding: 5px;">
+        <p>Rating: <%= activity.rating %></p>
+        <p><%= activity.description %></p>
+        <p>￡<%= activity.price %></p>
+      </div>
+    </div>
+
+    <div class="back">
+      <div class="mb-5" style="width: 100%; height: 200px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <strong>Location:</strong>
+        <%= activity.location %>
+      </div>
       <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
       <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
     </div>
-  <% end %>
+  </div>
+<% end %>

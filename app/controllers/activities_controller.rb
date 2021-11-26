@@ -1,6 +1,13 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    # if current_user.answer_ids
+    #   @activities = Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
+    #   # ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id).each do |tag_id|
+    #   #   @recommended_activities << Activity.where(id: tag_id)
+    #   #   p @recommended_activities
+    #   # end
+    # end
   end
 
   def show
