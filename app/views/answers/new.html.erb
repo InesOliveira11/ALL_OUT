@@ -1,7 +1,10 @@
-<%= @question.question %>
+<div class="m-3 text-center">
+  <%= @question.question %>
 
-<%= simple_form_for [ @question, @answer ] do |f| %>
-  <%= f.input :selected_answer, as: :radio_buttons, collection:  [@question.answer_1, @question.answer_2] %>
-  <%= f.hidden_field :next, value: @question.id + 1 %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [ @question, @answer ] do |f| %>
+    <%= f.input :selected_answer, as: :radio_buttons, collection:  [@question.answer_1, @question.answer_2], input_html: { class: "tag-selector" },  item_wrapper_class: 'tag-item' %>
+    <%= f.hidden_field :next, value: @question.id + 1 %>
+    <%= f.submit "👌", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
