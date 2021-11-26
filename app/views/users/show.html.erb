@@ -1,16 +1,9 @@
 <div class="show-page">
-  <div class="show-up">
-    <div class="show-image" style="padding:10px">
-      <img style="width: 130px;" src="https://cdn-icons-png.flaticon.com/512/994/994588.png" alt="">
-    </div>
-    <div class="show-message">
-      <p>
+<h1 class="favourite-text">
         Welcome
         <strong><%= @user.first_name %></strong>  <br>
         to your profile page!
-      </p>
-    </div>
-  </div>
+      </h1>
   <div class="show-bottom">
     <p style="text-align:center;">Your Accout Details:</p>
     <div class="diplay-raw">
@@ -30,7 +23,12 @@
     </div>
     </div>
     <div class="show-boking">
-    <p style="text-align:center;"> Your Bookings:</p>
+    <p style="text-align:center; font-weight: bold;"> Your Bookings:</p>
+    <p><% @bookings.each do |booking| %>
+      <%= booking.activity.title %><br>
+      <%= booking.activity.location %><br>
+    <% end %><p>
+    </div>
     </div>
 
 </div>
