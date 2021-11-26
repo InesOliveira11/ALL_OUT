@@ -8,17 +8,17 @@
         <p>￡<%= activity.price %></p>
       </div>
     </div>
-      <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
-      <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
 
     <div class="back">
-      <div style="width: 100%; height: 200px;"
+      <div class="mb-5" style="width: 100%; height: 200px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         <strong>Location:</strong>
         <%= activity.location %>
       </div>
+      <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
     </div>
   </div>
 <% end %>
