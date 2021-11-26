@@ -1,7 +1,11 @@
 .card-body {
-  color:white;
+  //color:white;
   text-align: center;
   margin: 20px;
+}
+.card {
+  width: 100%;
+  height: 100px; // so we can see the whole card
 }
 
 // card favourites
