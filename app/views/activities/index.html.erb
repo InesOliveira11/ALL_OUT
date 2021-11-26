@@ -1,13 +1,15 @@
 <% @activities.each do |activity| %>
   <div class="flip">
-    <div class="front" style="background-image: url(<%= cl_image_path activity.photo.key %>);">
+    <div class="front" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
       <h1 class="text-shadow"><%= activity.title %></h1>
-      <p><%= activity.rating %></p>
-      <p><%= activity.description %></p>
-      <p>￡<%= activity.price %></p>
+      <div class="mb-1" style="background-color: #313131; border-radious: 5px; padding: 5px;">
+        <p>Rating: <%= activity.rating %></p>
+        <p><%= activity.description %></p>
+        <p>￡<%= activity.price %></p>
+      </div>
+    </div>
       <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
       <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
-    </div>
 
     <div class="back">
       <div style="width: 100%; height: 200px;"
