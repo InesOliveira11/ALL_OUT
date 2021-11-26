@@ -1,17 +1,12 @@
-
-<div class="card">
-  <div class="card-content">
-    <% @activities.each do |activity| %>
-      <%= cl_image_tag activity.photo.key, class: "card" %>
-        <h2 class="card-title"><%= activity.title %></h2></div>
-        <p class="card-body"><%= activity.rating %></p>
-        <p class="card-body"><%= activity.description %></p>
-        <p class="card-body">￡<%= activity.price %></p>
-        <br>
-        <div class="button">
-        <%= link_to 'Liked', activity_favourites_path(activity), method: :post %>
-        </div>
-        <%= link_to 'Book me!', new_activity_booking(activity),  class: "btn btn-success"  %>
-    <% end %>
-  </div>
-</div>
+<div>
+  <% @activities.each do |activity| %>
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path activity.photo.key %>)">
+      <h2 class="card-title"><%= activity.title %></h2></div>
+      <p class="card-body"><%= activity.rating %></p>
+      <p class="card-body"><%= activity.description %></p>
+      <p class="card-body">￡<%= activity.price %></p>
+      <br>
+      <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
+    </div>
+  <% end %>
