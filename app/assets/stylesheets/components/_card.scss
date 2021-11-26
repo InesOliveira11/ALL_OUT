@@ -32,6 +32,7 @@
 .content-container {
   margin-bottom: 0px !important;
   min-height: 0px !important;
+  //height: 100vh;
 }
 
 .card-category {
@@ -51,7 +52,7 @@
 
 .show-page {
   background-color: #FFC460;
-  height: 100%;
+  height: 100vh;
   padding-top: 20px;
 }
 
@@ -119,13 +120,19 @@
 
 .container-favourite{
   background-color: #D9BCEE;
-  padding: 10px;
+  height: 100vh;
 }
 
 .favourite-text{
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+}
+
+.row-favourite {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0pt;
 }
 
 // card flipping effect
