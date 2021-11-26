@@ -1,36 +1,38 @@
-<% if @activity.photo.present? %>
-  <div class="background-card-image" style="background-image: url('<%= cl_image_path @activity.photo.key%>')">
-    <p>
-      <strong>Title:</strong>
-      <%= @activity.title %>
-    </p>
-    <p><strong>Rating:</strong><%= @activity.rating %></p>
-    <p>
-      <strong>Description:</strong>
-      <%= @activity.description %>
-    </p>
-    <p>£<%= @activity.price %></p>
-  </div>
-
-<% else %>
-  <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
-    <p>
-      <strong>Title:</strong>
-      <%= @activity.title %>
-    </p>
-    <p><strong>Rating:</strong><%= @activity.rating %></p>
-    <p>
-      <strong>Description:</strong>
-      <%= @activity.description %>
-    </p>
-    <p>£<%= @activity.price %></p>
-  </div>
-<% end %>
-
-  <div style="width: 600px; height: 600px;"
+<div class="activity-card" >
+  <div class="activity-info" >
+  <% if @activity.photo.present? %>
+    <div class="activity-image" style="background-image: url('<%= cl_image_path @activity.photo.key%>')">
+      <p><strong>Title:</strong>
+        <%= @activity.title %></p>
+      <p><strong>Rating:</strong><%= @activity.rating %></p>
+      <p><strong>Description:</strong>
+        <%= @activity.description %>
+      </p>
+      <p>£<%= @activity.price %></p>
+    </div>
+  <% else %>
+    <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
+      <p>
+        <strong>Title:</strong>
+        <%= @activity.title %>
+      </p>
+      <p><strong>Rating:</strong><%= @activity.rating %></p>
+      <p>
+        <strong>Description:</strong>
+        <%= @activity.description %>
+      </p>
+      <p>£<%= @activity.price %></p>
+    </div>
+  <% end %>
+</div>
+<br>
+  <div class="activity-map" >
+  <div style="width: 350px; height: 300px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <strong>Location:</strong>
     <%= @activity.location %>
   </div>
+</div>
+</div>
