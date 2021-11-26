@@ -14,7 +14,8 @@
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        <strong>Location:</strong>
+      </div>
+      <div> <strong>Location:</strong>
         <%= activity.location %>
       </div>
       <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>

@@ -1,13 +1,23 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
-    # if current_user.answer_ids
-    #   @activities = Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
-    #   # ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id).each do |tag_id|
-    #   #   @recommended_activities << Activity.where(id: tag_id)
-    #   #   p @recommended_activities
-    #   # end
-    # end
+    if current_user.answer_ids
+      #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
+      #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
+      selected_tags = ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:id)
+      @activities.select do |activity|
+        p activity.activity_tag_ids
+        p selected_tags
+        activity.activity_tag_ids == selected_tags
+      end
+    end
+    # @markers = @activities.geocoded.map do |activity| {
+    #   lat: activity.latitude,
+    #   lng: activity.longitude,
+    #   # info_window: render_to_string(partial: "info_window", locals: { activity: @activity }),
+    #   # image_url: helpers.asset_url("location1.png")
+    # }
+    #end
   end
 
   def show
