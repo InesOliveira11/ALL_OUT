@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create]
   end
 
-  get 'search', to: "pages#search"
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+  get 'search', to: "pages#search"
 end
