@@ -36,7 +36,11 @@
       <div> <strong>Location:</strong>
         <%= activity.location %>
       </div>
-      <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <% if activity.favourites.exists? %>
+        <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to '♡', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <% end %>
       <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
     </div>
   </div>

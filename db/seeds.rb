@@ -119,7 +119,7 @@ activity = Activity.new(
   description: "Located in the heart of London invites you to dine in complete darkness, accompanied and served by unexpected guides.",
   price: "100",
   rating: "4.5",
-  location: "69-73 St John Street, EC1M 4AN London"
+  location: "69-73 St John Street, London EC1M 4AN"
 )
 file = URI.open("https://london.danslenoir.com/templates/yootheme/cache/SHOOTING_WEBSITE_13-13eee0fe.jpeg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
@@ -131,7 +131,7 @@ activity = Activity.new(
   description: "Enjoy a meal cooked by a MasterChef inside a 19th century train carriage on The Murdér Express.",
   price: "65",
   rating: "3.0",
-  location: "Arch 63 Pedley Street, E1 5BW"
+  location: "Arch 63 Pedley Street, London E1 5BW"
 )
 file = URI.open("https://media.timeout.com/images/105449407/1372/772/image.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
@@ -215,7 +215,7 @@ activity = Activity.new(
   description: "In Money Heist: The Experience you’ll live out the first ever international robbery in person. Take part in this immersive experience full of special effects and endless surprises.",
   price: "45",
   rating: "4.0",
-  location: "79-85 Old Brompton Road, SW7 3LD"
+  location: "79-85 Old Brompton Road, London SW7 3LD"
 )
 file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
@@ -227,7 +227,7 @@ activity = Activity.new(
   description: "Experience our immersive Sherlock Escape Room, and solve London's new murder mystery.",
   price: "40",
   rating: "4.0",
-  location: "79-85 Old Brompton Road, SW7 3LD"
+  location: "79-85 Old Brompton Road, London SW7 3LD"
 )
 file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')

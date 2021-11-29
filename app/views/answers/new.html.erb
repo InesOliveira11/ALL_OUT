@@ -1,10 +1,18 @@
-<div class="m-3 text-center">
-  <%= @question.question %>
+<div class="m-3 text-center" data-controller="question">
+  <h1 class="favourite-text"><%= @question.question %></h1>
 
-  <%= simple_form_for [ @question, @answer ] do |f| %>
-    <%= f.input :selected_answer, as: :radio_buttons, collection:  [@question.answer_1, @question.answer_2], input_html: { class: "tag-selector" },  item_wrapper_class: 'tag-item' %>
+  <%= simple_form_for [ @question, @answer ], html: { class: "d-none" },  data: { target: "question.form" } do |f| %>
+    <%= f.input :selected_answer, input_html: { class: "tag-selector" },  item_wrapper_class: 'tag-item' %>
     <%= f.hidden_field :next, value: @question.id + 1 %>
-    <%= f.submit "👌", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
+  <div><h1><% @question.question %></h1></div>
 
+  <div class="card-category" data-question-target="buttonOne" data-action="click->question#imageClickOne" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @question.photos.first.key %>')">
+    <%= @question.answer_1 %>
+  </div>
+  <br>
+  <div class="card-category" data-question-target="buttonTwo" data-action="click->question#imageClickTwo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @question.photos.last.key %>')">
+    <%= @question.answer_2 %>
+  </div>
 </div>
