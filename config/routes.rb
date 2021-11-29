@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create]
   end
 
+  get 'search', to: "pages#search"
+
 end
