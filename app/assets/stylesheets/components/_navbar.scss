@@ -7,79 +7,24 @@
   color: #b5c4da;
 }
 // pink icon
-.nav-active-pink {
-  background-color: #FFDFEA;
-  color: #FF90B5;
+.nav-active {
+  background-color: #4c6175;
+  color: #222831;
   border-radius: 50%;
   height: 50px;
   width: 50px;
   font-size: 1.2rem;
   &:hover {
-    color: #FF90B5;
+    color: #222831;
   }
 }
 
-.nav-active-pink i {
+.nav-active i {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// purple icon
-
-.nav-active-purple {
-  background-color: #D9BCEE;
-  color: #A439F1;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.2rem;
-  &:hover {
-    color: #A439F1;
-  }
-}
-
-.nav-active-purple i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// green icon
-.nav-active-green {
-  background-color: #C3EEEC;
-  color: #00D1C7;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.2rem;
-  &:hover {
-    color: #00D1C7;
-  }
-}
-.nav-active-green i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// yellow icon
-.nav-active-yellow {
-  background-color: #FFEBC7;
-  color: #FFC460;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.2rem;
-  &:hover {
-    color: #FFC460;
-  }
-}
-.nav-active-yellow i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 // navbar container properties
 
@@ -99,7 +44,6 @@
 
 .bottom-nav {
   background: #fff;
-  border-radius: 1rem 1rem 0 0;
   box-shadow: 0 0.4rem 1rem 0 rgba(55, 55, 55, 0.2);
   display: flex;
   justify-content: space-around;
