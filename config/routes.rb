@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
+  get 'search', to: "pages#search"
 end

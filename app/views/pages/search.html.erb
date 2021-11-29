@@ -1,0 +1,15 @@
+<h2 class="text-center">Find your activity</h2>
+<div class="container mt-5">
+  <div class="search-box">
+    <%= form_tag activities_path, method: :get, class: "form-span" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input",
+        placeholder: "Find an activity"
+      %>
+      <%= button_tag(type: "submit", class: "search-button") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

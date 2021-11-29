@@ -1,3 +1,20 @@
+<div class="container">
+  <div class="search-box">
+    <% if params[:query].present? %>
+      <%= form_tag activities_path, method: :get, class: "form-span" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-input",
+          placeholder: "Find an activity"
+        %>
+        <%= button_tag(type: "submit", class: "search-button") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <h1 style="text-align:center;">Activities</h1>
 <% @activities.each do |activity| %>
   <div class="flip d-flex flex-column">
@@ -19,7 +36,11 @@
       <div> <strong>Location:</strong>
         <%= activity.location %>
       </div>
-      <%= link_to 'Liked', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <% if activity.favourites.exists? %>
+        <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to '♡', activity_favourites_path(activity), method: :post, class: "btn btn-primary" %>
+      <% end %>
       <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
     </div>
   </div>
