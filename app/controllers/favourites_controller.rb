@@ -21,7 +21,9 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
+    @favourite = Favourite.find(params[:id])
     @favourite.destroy
+    redirect_to request.referrer
     #redirect_to favourites_url, notice: 'Restaurant was successfully destroyed.'
   end
 end
