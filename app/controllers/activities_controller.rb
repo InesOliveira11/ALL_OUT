@@ -4,11 +4,11 @@ class ActivitiesController < ApplicationController
     if current_user.answer_ids
       #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
       #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
-      selected_tags = ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:id)
+      selected_tags = current_user.answers.pluck(:selected_answer)
       @activities.select do |activity|
-        p activity.activity_tag_ids
+        p activity.activity_tags.pluck(:tag_name)
         p selected_tags
-        activity.activity_tag_ids == selected_tags
+        activity.activity_tags.pluck(:tag_name) == selected_tags
       end
     end
     # @markers = @activities.geocoded.map do |activity| {
