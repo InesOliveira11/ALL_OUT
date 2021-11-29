@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Payment method
 gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'

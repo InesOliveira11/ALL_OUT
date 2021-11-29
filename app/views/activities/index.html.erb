@@ -6,7 +6,7 @@
       <div class="mb-1" style="background-color: #313131; border-radious: 5px; padding: 5px;">
         <p>Rating: <%= activity.rating %></p>
         <p><%= activity.description %></p>
-        <p>￡<%= activity.price %></p>
+        <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
       </div>
     </div>
 

@@ -78,6 +78,8 @@ question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?ci
 question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?musicfestival"), filename: 'poster2.png', content_type: 'image/png')
 question_15.save!
 
+Order.destroy_all
+Booking.destroy_all
 User.destroy_all
 Activity.destroy_all
 
@@ -117,7 +119,7 @@ user.save!
 activity = Activity.new(
   title: "Dans le noir?",
   description: "Located in the heart of London invites you to dine in complete darkness, accompanied and served by unexpected guides.",
-  price: "100",
+  price_cents: "10000",
   rating: "4.5",
   location: "69-73 St John Street, EC1M 4AN London"
 )
@@ -129,7 +131,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
 activity = Activity.new(
   title: "The murdér express",
   description: "Enjoy a meal cooked by a MasterChef inside a 19th century train carriage on The Murdér Express.",
-  price: "65",
+  price_cents: "6500",
   rating: "3.0",
   location: "Arch 63 Pedley Street, E1 5BW"
 )
@@ -141,7 +143,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
 activity = Activity.new(
   title: "Mercato Metropolitano",
   description: "Mercato Metropolitano is London’s first sustainable community market. Has incubated more than 40 food and beverage businesses, a delicatessen with sustainably sourced products from local farmers and artisans, a unique cinema experience, a communal kitchen and several circular economy concepts including a Bavarian micro-brewery.",
-  price: "20",
+  price_cents: "2000",
   rating: "5.0",
   location: "42 Newington Causeway, London SE1 6DR"
 )
@@ -153,7 +155,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
 activity = Activity.new(
   title: "Bang Bang - Oriental Foodhall",
   description: "The Bang Bang Oriental Foodhall is the newest and largest Asian food court in London, and boasts the widest range of specialist Asian restaurants in the whole of the UK.",
-  price: "40",
+  price_cents: "4000",
   rating: "3.0",
   location: "399 Edgware Road, Colindale, London NW9 0FH"
 )
@@ -165,7 +167,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
 activity = Activity.new(
   title: "Cahoots",
   description: "Cahoots is a 1940s-themed bar located in the heart of London’s Soho. Set inside an abandoned train station, the scoundrels of this station-speakeasy serve up spiffing cocktails, jolly-good rations and live swinging entertainment seven days a week.",
-  price: "30",
+  price_cents: "3000",
   rating: "5.0",
   location: "13 Kingly Ct, Carnaby, London W1B 5PW"
 )
@@ -177,7 +179,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
 activity = Activity.new(
   title: "The Cauldron",
   description: "The Cauldron is an immersive cocktail-making class where guests use science and technology to make magic real. Come and brew some molecular cocktails with working magic wands!",
-  price: "35",
+  price_cents: "3500",
   rating: "4.0",
   location: "5d Stoke Newington Rd, London N16 8BH"
 )
@@ -189,7 +191,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
 activity = Activity.new(
   title: "Cirque le Soir",
   description: "Plush, circus-themed nightclub with DJs, burlesque snake charmers, fire eaters and indoor funfair.",
-  price: "150",
+  price_cents: "15000",
   rating: "4.0",
   location: "15-21 Ganton St, Carnaby, London W1F 9BN"
 )
@@ -201,7 +203,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
 activity = Activity.new(
   title: "Silent Disco at The View from The Shard",
   description: "The silent disco phenomenon reaches new heights at these exclusive Time Out events. Pick your vibe and choose your side as three DJs battle it out over separate wireless channels, playing the best in pop, rock and party classics, while you dance the night away 1,000ft in th air.",
-  price: "40",
+  price_cents: "4000",
   rating: "5.0",
   location: "32 London Bridge St, London SE1 9SG"
 )
@@ -213,7 +215,7 @@ create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
 activity = Activity.new(
   title: "Money Heist - The Experience",
   description: "In Money Heist: The Experience you’ll live out the first ever international robbery in person. Take part in this immersive experience full of special effects and endless surprises.",
-  price: "45",
+  price_cents: "4500",
   rating: "4.0",
   location: "79-85 Old Brompton Road, SW7 3LD"
 )
@@ -225,7 +227,7 @@ create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
 activity = Activity.new(
   title: "Sherlock Holmes - The official Live Game",
   description: "Experience our immersive Sherlock Escape Room, and solve London's new murder mystery.",
-  price: "40",
+  price_cents: "4000",
   rating: "4.0",
   location: "79-85 Old Brompton Road, SW7 3LD"
 )

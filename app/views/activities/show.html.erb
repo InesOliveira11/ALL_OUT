@@ -8,7 +8,11 @@
       <p><strong>Description:</strong>
         <%= @activity.description %>
       </p>
-      <p>£<%= @activity.price %></p>
+      <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'activity_id', @activity.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   <% else %>
     <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
@@ -21,7 +25,11 @@
         <strong>Description:</strong>
         <%= @activity.description %>
       </p>
-      <p>£<%= @activity.price %></p>
+      <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'activity_id', @activity.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   <% end %>
 </div>
