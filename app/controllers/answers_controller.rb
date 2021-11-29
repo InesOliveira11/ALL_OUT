@@ -1,6 +1,9 @@
 class AnswersController < ApplicationController
   def new
     @question = Question.find(params[:question_id])
+    if @question == Question.first
+      Answer.destroy_by(user_id: current_user.id)
+    end
     @answer = Answer.new
     @user = current_user
   end
