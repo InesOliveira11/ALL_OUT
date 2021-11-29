@@ -1,16 +1,23 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
-    if current_user.answer_ids
-      #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
-      #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
-      selected_tags = ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:id)
-      @activities.select do |activity|
-        p activity.activity_tag_ids
-        p selected_tags
-        activity.activity_tag_ids == selected_tags
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR description ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    else
+        @activities = Activity.all
+      if current_user.answer_ids
+        #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
+        #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
+        selected_tags = ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:id)
+        @activities.select do |activity|
+          p activity.activity_tag_ids
+          p selected_tags
+          activity.activity_tag_ids == selected_tags
+        end
       end
     end
+
+
     # @markers = @activities.geocoded.map do |activity| {
     #   lat: activity.latitude,
     #   lng: activity.longitude,
