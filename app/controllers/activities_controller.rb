@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
       sql_query = "title ILIKE :query OR description ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
-     @activities = Activity.all
+      @activities = Activity.all
       if current_user.answer_ids
         #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
         #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
