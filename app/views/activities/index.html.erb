@@ -1,5 +1,5 @@
-<div class="container mt-2">
-  <div class="search-box">
+<div class="container mt-3">
+  <div class="search-box mb-4">
     <% if params[:query].present? %>
       <%= form_tag activities_path, method: :get, class: "form-span" do %>
         <%= text_field_tag :query,
@@ -13,27 +13,30 @@
       <% end %>
     <% end %>
   </div>
-</div>
 
-<h1 style="text-align:center;">Activities</h1>
-<% @activities.each do |activity| %>
-  <div class="m-5">
-    <div class="card" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
-      <% if activity.favourites.exists? %>
-        <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "heart" %>
-      <% else %>
-        <%= link_to '♡', activity_favourites_path(activity), method: :post, class: "heart" %>
-      <% end %>
-      <div class="card-content container">
-        <h3 class="card-title"><%= activity.title %></h3>
-        <div class="card-body">
-          <p>Rating: <%= activity.rating %></p>
-          <p><%= activity.description %></p>
-          <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
-          <p>Location: <%= activity.location %></p>
-          <%= link_to 'Book me!', new_activity_booking_path(activity),  class: "btn btn-success"  %>
+  <% @activities.each do |activity| %>
+    <div class="m-2 mb-5">
+      <div class="card" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
+        <% if activity.favourites.exists? %>
+          <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "heart" %>
+        <% else %>
+          <%= link_to '♡', activity_favourites_path(activity), method: :post, class: "heart" %>
+        <% end %>
+        <div class="card-content container">
+          <h3 class="card-title"><%= activity.title %></h3>
+          <div class="card-body">
+            <p>Rating: <%= activity.rating %></p>
+            <p><%= activity.description %></p>
+            <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
+            <p>Location: <%= activity.location %></p>
+            <div>
+              <%= link_to new_activity_booking_path(activity),  class: "btn btn-success" do %>
+                <span>Book now!</span>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
