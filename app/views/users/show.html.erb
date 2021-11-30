@@ -1,35 +1,66 @@
 <div class="show-page">
-<h1 class="favourite-text">
+  <h1 class="favourite-text">
         Welcome
         <strong><%= @user.first_name %></strong>  <br>
         to your profile page!
       </h1>
-  <div class="show-bottom">
-    <p style="text-align:center;">Your Accout Details:</p>
-    <div class="diplay-raw">
-    <p>First name: <span class="ruby-text"><%= @user.first_name %></span></p>
-    </div>
-    <div class="diplay-raw">
-    <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
-    </div>
-    <div class="diplay-raw">
-    <p>Birth date: <span class="ruby-text"><%= @user.birth_date %></span></p>
-    </div>
-    <div class="diplay-raw">
-    <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
-    </div>
-    <div class="diplay-raw">
-    <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
-    </div>
+    <div class="show-bottom">
+      <p style="text-align:center;">Your Accout Details:</p>
+      <div class="diplay-raw">
+        <p>First name: <span class="ruby-text"><%= @user.first_name %></span></p>
+      </div>
+      <div class="diplay-raw">
+        <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
+      </div>
+      <div class="diplay-raw">
+        <p>Birth date: <span class="ruby-text"><%= @user.birth_date %></span></p>
+      </div>
+      <div class="diplay-raw">
+        <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
+      </div>
+      <div class="diplay-raw">
+        <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
+      </div>
     </div>
     <div class="show-boking">
-    <p style="text-align:center; font-weight: bold;"> Your Bookings:</p>
-    <p><% @bookings.each do |booking| %>
-      <%= booking.activity.title %><br>
-      <%= booking.activity.location %><br>
-      <%= booking.date %><br>
-    <% end %><p>
+      <p style="text-align:center; font-weight: bold;"> Your Bookings:</p>
+      <p><% @bookings.each do |booking| %>
+        <%= booking.activity.title %><br>
+        <%= booking.activity.location %><br>
+        <%= booking.date %><br>
+        <%= link_to '⭐', new_booking_review_path(booking) %>
+      <% end %><p>
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Leave the review
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+
+
+  </div>
+  </div>
 
 </div>

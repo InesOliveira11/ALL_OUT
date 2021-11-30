@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: [:show]
-  resources :reviews
+  resources :bookings, only: [:show] do
+    resources :reviews
+  end
+
   resources :favourites, only: %i[index]
 
   resources :questions do
