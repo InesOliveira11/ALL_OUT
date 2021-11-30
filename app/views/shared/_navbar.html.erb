@@ -1,5 +1,5 @@
 <div class="bottom-nav  d-flex justify-content-evenly">
-    <%= link_to root_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'index' } " do %>
+    <%= link_to root_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'home' } " do %>
       <i class="fas fa-home"></i>
     <% end %>
     <%= link_to activities_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
