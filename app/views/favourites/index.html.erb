@@ -1,8 +1,8 @@
-<div class="container-favourite">
-  <h1 class="favourite-text">Your favourites</h1>
+<div class="text-center mt-3">
+  <h2>Your favourites</h2>
     <div class="row-favourite">
       <% @favourites.each do |favourite| %>
-        <div class="col-6 mb-3">
+        <div class="col-6 mb-3 mt-3">
           <%= link_to activity_path(favourite.activity) do %>
           <div class="card-favourites" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path favourite.activity.photo.key %>)">
             <%= favourite.activity.title %><br>

@@ -15,7 +15,7 @@
   </div>
 
   <% @activities.each do |activity| %>
-    <div class="m-2 mb-5">
+    <div class="mb-5">
       <div class="card" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
         <% if activity.favourites.exists? %>
           <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "heart" %>
