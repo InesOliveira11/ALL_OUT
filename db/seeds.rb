@@ -1,5 +1,9 @@
 require 'open-uri'
-Question.all.count.zero? ? last_question_id = 1 : Question.last.id
+last_question_id = if Question.all.count.zero?
+                    1
+                   else
+                    Question.last.id
+                   end
 ActivityTag.destroy_all
 Answer.destroy_all
 Question.destroy_all
