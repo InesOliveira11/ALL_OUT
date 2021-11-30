@@ -12,7 +12,22 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.activity = @activity
     if @booking.save!
-      redirect_to user_path(current_user)
+      order = Order.create!(booking: @booking, activity: @activity, activity_sku: @activity.sku, amount: @activity.price, state: 'pending', user: current_user)
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          name: @activity.title,
+          images: [Cloudinary::Utils.cloudinary_url(@activity.photo)],
+          amount: @activity.price_cents,
+          currency: 'gbp',
+          quantity: 1
+        }],
+        success_url: user_url(current_user),
+        cancel_url: order_url(order)
+      )
+
+      order.update(checkout_session_id: session.id)
+      redirect_to new_order_payment_path(order)
     else
       render :new
     end

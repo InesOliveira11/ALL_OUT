@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_150810) do
+ActiveRecord::Schema.define(version: 2021_11_30_103020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,9 @@ ActiveRecord::Schema.define(version: 2021_11_29_150810) do
     t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "booking_id", null: false
     t.index ["activity_id"], name: "index_orders_on_activity_id"
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_150810) do
   add_foreign_key "favourites", "activities"
   add_foreign_key "favourites", "users"
   add_foreign_key "orders", "activities"
+  add_foreign_key "orders", "bookings"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "bookings"
 end
