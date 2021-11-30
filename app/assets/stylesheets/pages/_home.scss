@@ -3,3 +3,11 @@
   margin-bottom: 56px;
   min-height: calc(100vh - 56px);
 }
+
+.center-all {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  display:flex;
+}
