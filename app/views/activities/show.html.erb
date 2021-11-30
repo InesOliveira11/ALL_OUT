@@ -1,26 +1,26 @@
 <div class="activity-card" >
   <div class="activity-info" >
-  <% if @activity.photo.present? %>
-    <div class="activity-image" style="background-image: url('<%= cl_image_path @activity.photo.key%>')">
-      <p><strong>Title:</strong>
-        <%= @activity.title %></p>
-      <p><strong>Rating:</strong><%= @activity.rating %></p>
-      <p><strong>Description:</strong>
-        <%= @activity.description %>
-      </p>
-      <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
-      <%= form_tag orders_path do %>
-      <%= hidden_field_tag 'activity_id', @activity.id %>
-      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  <% else %>
+    <% if @activity.photo.present? %>
+      <div class="activity-image" style="background-image: url('<%= cl_image_path @activity.photo.key%>')">
+        <p><strong>Title:</strong>
+          <%= @activity.title %></p>
+        <p><strong>Rating:</strong><%= @activity.rating %></p>
+        <p><strong>Description:</strong>
+          <%= @activity.description %>
+        </p>
+        <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
+        <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'activity_id', @activity.id %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    <% else %>
     <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
       <p>
         <strong>Title:</strong>
         <%= @activity.title %>
       </p>
-      <p><strong>Rating:</strong><%= @activity.rating %></p>
+      <p><strong>Rating: </strong><%= @activity.rating %></p>
       <p>
         <strong>Description:</strong>
         <%= @activity.description %>
