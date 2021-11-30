@@ -1,5 +1,5 @@
 require 'open-uri'
-last_question_id = Question.last.id
+Question.all.count.zero? ? last_question_id = 1 : Question.last.id
 Question.destroy_all
 
 question_1 = Question.create(question: 'What do you prefer today?', answer_1: "Indoors", next_question_1: last_question_id + 2, answer_2: "Outdoors", next_question_2: last_question_id + 3)

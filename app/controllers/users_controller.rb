@@ -7,11 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @bookings = @user.bookings
-    # @user_booking = []
-    # @user.activities.each do |activity|
-    #   activity.bookings.empty? ? @user_booking : @user_booking << activity.bookings
-    # end
+    user_bookings = @user.bookings
+    @bookings = []
+    user_bookings.each do |booking|
+      @bookings << booking if booking.order.state == "paid"
+    end
   end
 
   # def new
