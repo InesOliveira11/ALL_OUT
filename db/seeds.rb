@@ -1,7 +1,15 @@
 require 'open-uri'
-Question.all.count.zero? ? last_question_id = 1 : Question.last.id
+ActivityTag.destroy_all
+Answer.destroy_all
 Question.destroy_all
+Order.destroy_all
+Review.destroy_all
+Booking.destroy_all
+Favourite.destroy_all
+User.destroy_all
+Activity.destroy_all
 
+last_question_id = 1
 question_1 = Question.create(question: 'What do you prefer today?', answer_1: "Indoors", next_question_1: last_question_id + 2, answer_2: "Outdoors", next_question_2: last_question_id + 3)
 p question_1
 question_1.photos.attach(io: URI.open("https://source.unsplash.com/featured/?indoors"), filename: 'poster1.png', content_type: 'image/png')
@@ -78,10 +86,6 @@ question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?ci
 question_15.photos.attach(io: URI.open("https://source.unsplash.com/featured/?musicfestival"), filename: 'poster2.png', content_type: 'image/png')
 question_15.save!
 
-Order.destroy_all
-Booking.destroy_all
-User.destroy_all
-Activity.destroy_all
 
 def create_activity_tags(activity, top_level, second_level, third_level, fourth_level)
   ActivityTag.create(
