@@ -4,16 +4,18 @@ class ActivitiesController < ApplicationController
       sql_query = "title ILIKE :query OR description ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
-      @activities = Activity.all
       if current_user.answer_ids
         #@activities = [] #Activity.where(id: ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct.pluck(:activity_id))
         #@activities = Activity.includes(:activity_tags).where('activity_tag.id = ?', ActivityTag.where(tag_name: current_user.answers.pluck(:selected_answer)).distinct)
-        selected_tags = current_user.answers.pluck(:selected_answer)
-        @activities.select do |activity|
+        @selected_tags = current_user.answers.pluck(:selected_answer)
+        @activities = []
+        Activity.all.each do |activity|
           p activity.activity_tags.pluck(:tag_name)
-          p selected_tags
-          activity.activity_tags.pluck(:tag_name) == selected_tags
+          p @selected_tags
+          @activities << activity if activity.activity_tags.pluck(:tag_name) == @selected_tags
         end
+      else
+        @activities = Activity.all
       end
     end
 
