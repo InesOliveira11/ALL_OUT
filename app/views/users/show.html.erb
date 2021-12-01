@@ -3,25 +3,41 @@
     Welcome
     <strong><%= @user.first_name %></strong>  <br>
     to your profile page!
-   </h2>
-    <div class="show-bottom" style="background-color: #494953; color: #EDF2F6;">
-      <p style="text-align:center;">Your Accout Details:</p>
-      <div class="diplay-raw">
-        <p>First name: <span class="ruby-text"><%= @user.first_name %></span></p>
-      </div>
-      <div class="diplay-raw">
-        <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
-      </div>
-      <div class="diplay-raw">
-        <p>Birth date: <span class="ruby-text"><%= @user.birth_date %></span></p>
-      </div>
-      <div class="diplay-raw">
-        <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
-      </div>
-      <div class="diplay-raw">
-        <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
+  </h2>
+  <br>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="list-inline tabs-underlined">
+      <a class="tab-underlined active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+    </li>
+    <li class="list-inline tabs-underlined">
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bookings</a>
+    </li>
+  </ul>
+
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="show-bottom">
+        <p style="text-align:center;">Your Accout Details:</p>
+        <div class="diplay-raw">
+          <p>First name: <span class="ruby-text"><%= @user.first_name %></span></p>
+        </div>
+        <div class="diplay-raw">
+          <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
+        </div>
+        <div class="diplay-raw">
+          <p>Birth date: <span class="ruby-text"><%= @user.birth_date %></span></p>
+        </div>
+        <div class="diplay-raw">
+          <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
+        </div>
+        <div class="diplay-raw">
+          <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
+        </div>
       </div>
     </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="show-boking">
       <p style="text-align:center; font-weight: bold;"> Your Bookings:</p>
       <p><% @bookings.each do |booking| %>
@@ -29,7 +45,7 @@
         <%= booking.activity.location %><br>
         <%= booking.date %><br>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Leave the review
     </button>
 
@@ -57,7 +73,8 @@
       </div>
     </div>
     <% end %><p>
-   </div>
   </div>
-
+  </div>
+  </div>
+</div>
 </div>
