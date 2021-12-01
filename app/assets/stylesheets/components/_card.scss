@@ -51,7 +51,7 @@
 }
 
 .show-page {
-  background-color: #FFC460;
+  //background-color: #FFC460;
   height: 100vh;
   padding-top: 20px;
 }
@@ -75,17 +75,18 @@
 }
 
 .show-bottom{
-  background-color: #FFEBC7;
+  background-color: #494953;
+  color: #EDF2F6;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
-  font-family: Optima, sans-serif;
-  font-size: 24px;
+  //font-family: Optima, sans-serif;
+  //font-size: 24px;
 }
 .show-bottom p{
-  font-family: Optima, sans-serif;
-  font-size: 24px;
+  //font-family: Optima, sans-serif;
+  //font-size: 24px;
   font-weight: bold;
   padding-bottom: 0px;
   margin-bottom: 0px;
@@ -98,13 +99,14 @@
 }
 
 .show-boking{
-  background-color: #FFEBC7;
+  background-color: #494953;
+  color: #EDF2F6;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(247, 223, 89, 0.2);
   padding: 10px;
-  font-family: Optima, sans-serif;
-  font-size: 24px;
+  //font-family: Optima, sans-serif;
+  //font-size: 24px;
 }
 
 .show-boking p{
@@ -295,4 +297,8 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+
+.nav-tabs {
+  border-bottom: none;
 }
