@@ -17,7 +17,6 @@
   </ul>
 
     <div class="tab-content" id="myTabContent">
-
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="show-bottom">
           <div class="diplay-raw">
@@ -43,7 +42,7 @@
           <%= booking.activity.location %><br>
           <%= booking.date.strftime("%m/%d/%Y") %><br> <br>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class: "red-button" data-toggle="modal" data-target="#exampleModal">
             Leave the review
           </button>
         </div>
@@ -61,12 +60,10 @@
                     <%= simple_form_for [booking, @review] do |f| %>
                       <%= f.input :rating %>
                       <%= f.input :content %>
+                        <div class="modal-footer">
+                          <%= f.submit %>
+                        </div>
                     <% end %>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>

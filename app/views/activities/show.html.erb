@@ -9,13 +9,12 @@
           <%= @activity.description %>
         </p>
         <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
-        <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'activity_id', @activity.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
+          <span>Book now!</span>
         <% end %>
       </div>
     <% else %>
-    <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
+    <div class="background-card-image" style="background-image: url('https://source.unsplash.com/featured/?activity')">
       <p>
         <strong>Title:</strong>
         <%= @activity.title %>
@@ -26,10 +25,15 @@
         <%= @activity.description %>
       </p>
       <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
+<<<<<<< HEAD
 
       <%= form_tag orders_path do %>
       <%= hidden_field_tag 'activity_id', @activity.id %>
       <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+=======
+      <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
+        <span>Book now!</span>
+>>>>>>> 0616e9399e6fe299839a65446dea4c71cc7aa8e6
       <% end %>
     </div>
   <% end %>

@@ -4,12 +4,12 @@
 .search-input{
   width: 100%;
   padding: 10px;
-  border: 4px solid #111d5e;
-  border-radius:10px 0 0 10px ;
+  border: 2px solid #111d5e;
+  border-radius:2px 0 0 2px ;
   border-right: none;
   outline: none;
   font-size: 20px;
-  color: tomato;
+  color: #B0244F;
   background: none;
   line-height: 20px;
 }
@@ -18,15 +18,21 @@
   width: 20%;
   outline: none;
   cursor: pointer;
-  border: 4px solid #111d5e;
-  border-radius: 0 10px 10px 0 ;
+  border: 2px solid #111d5e;
+  border-radius: 0 2px 2px 0 ;
   border-left: none;
   background: none;
   font-size: 20px;
-  border-left: 4px solid #111d5e;
+  border-left: 2px solid #111d5e;
   display:inline-block;
   line-height: 20px;
 }
 .form-span {
   display: flex;
+}
+
+
+// image in the search-box
+.search-box img {
+  margin-top: 100px;
 }
