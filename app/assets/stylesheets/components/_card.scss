@@ -65,19 +65,18 @@
 }
 
 .show-up {
-  background-color: #FFEBC7;
+  background-color: #494953;
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
   text-align: center;
   flex-direction: column;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(87, 60, 60, 0.514);
-}
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);}
 
 .show-bottom{
-  background-color: #494953;
-  color: #EDF2F6;
+  background-color: #d7d7d8;
+  color: #1b1b1b;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -104,7 +103,7 @@
   color: #1b1b1b;
   margin: 20px;
   border-radius: 3px;
-  box-shadow: 1 1 15px rgba(247, 223, 89, 0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
   //font-family: Optima, sans-serif;
   //font-size: 24px;
