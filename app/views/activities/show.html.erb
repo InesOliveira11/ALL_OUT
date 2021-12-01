@@ -24,7 +24,7 @@
       <p>
         <strong>Description:</strong>
         <%= @activity.description %>
-      </p>
+      </p>          
       <p><strong>Price:</strong> <%= humanized_money_with_symbol(@activity.price) %></p>
       <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
         <span>Book now!</span>

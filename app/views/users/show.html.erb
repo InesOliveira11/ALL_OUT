@@ -1,79 +1,80 @@
 <div class="show-page">
+
   <h2 class="mt-3 text-center">
     Welcome
     <strong><%= @user.first_name %></strong>  <br>
     to your profile page!
   </h2>
   <br>
+
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="list-inline tabs-underlined">
-      <a class="tab-underlined active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+      <a class="tab-underlined active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
     </li>
     <li class="list-inline tabs-underlined">
-      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bookings</a>
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
     </li>
   </ul>
 
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div>
+          <% @bookings.each do |booking| %>
+        <div class="show-boking">
+          <%= booking.activity.title %><br>
+          <%= booking.activity.location %><br>
+          <%= booking.date.strftime("%m/%d/%Y") %><br>
 
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="show-bottom">
-        <p style="text-align:center;">Your Account Details:</p>
-        <div class="diplay-raw">
-          <p>First name: <span class="ruby-text"><%= @user.first_name %></span></p>
+          <button type="button" class="red-button" data-toggle="modal" data-target="#exampleModal">
+            Leave a review
+          </button>
         </div>
-        <div class="diplay-raw">
-          <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
-        </div>
-        <div class="diplay-raw">
-          <p>Birth date: <span class="ruby-text"><%= @user.birth_date.strftime("%m/%d/%Y") %></span></p>
-        </div>
-        <div class="diplay-raw">
-          <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
-        </div>
-        <div class="diplay-raw">
-          <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
-        </div>
-      </div>
-    </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="show-boking">
-      <p style="text-align:center; font-weight: bold;"> Your Bookings:</p>
-      <p><% @bookings.each do |booking| %>
-        <%= booking.activity.title %><br>
-        <%= booking.activity.location %><br>
-        <%= booking.date.strftime("%m/%d/%Y") %><br>
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Leave the review
-    </button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-            <div class="modal-body">
-              <%= simple_form_for [booking, @review] do |f| %>
-                <%= f.input :rating %>
-                <%= f.input :content %>
-              <% end %>
+                <div class="modal-body">
+                    <%= simple_form_for [booking, @review], html: { class: "review-form" } do |f| %>
+                      <%= f.input :rating %>
+                      <%= f.input :content %>
+                    <% end %>
+                    <div class="modal-footer">
+                      <button class="btn red-button review-submit"> Submit </button>
+                    </div>
+                </div>
+              </div>
             </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
+          <% end %>
         </div>
       </div>
+
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="show-bottom">
+          <div class="diplay-raw">
+            <p>Name: <span class="ruby-text"><%= @user.first_name %> <%= @user.last_name %></span></p>
+          </div>
+          <div class="diplay-raw">
+            <p>Birth date: <span class="ruby-text"><%= @user.birth_date.strftime("%m/%d/%Y") %></span></p>
+          </div>
+          <div class="diplay-raw">
+            <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
+          </div>
+          <div class="diplay-raw">
+            <p>Address: <span class="ruby-text"><%= @user.address %></span></p>
+          </div>
+        </div>
+
+
+
+      </div>
+
     </div>
-    <% end %><p>
-  </div>
-  </div>
-  </div>
-</div>
+
 </div>

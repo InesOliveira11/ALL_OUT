@@ -18,6 +18,20 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+import swal from 'sweetalert'
 
 document.addEventListener('turbolinks:load', () => {
+  if (document.querySelector(".review-submit")) {
+    const submitButton = document.querySelector(".review-submit")
+    submitButton.addEventListener("click", event => {
+      console.log(event)
+      swal({
+        title: 'Success',
+        text: 'Your review has been submitted!',
+        icon: 'success',
+      }).then(function () {
+        document.querySelector(".review-form").submit()
+      })
+    })
+  }
 })
