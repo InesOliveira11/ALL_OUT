@@ -2,12 +2,11 @@ class OrdersController < ApplicationController
   def create
     activity = Activity.find(params[:activity_id])
     order = Order.create!(activity: activity, activity_sku: activity.sku, amount: activity.price, state: 'pending', user: current_user)
-
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: activity.title,
-        images: [Cloudinary::Utils.cloudinary_url(activity.photo)],
+        images: [activity.photo.service_url(secure: true)],
         amount: activity.price_cents,
         currency: 'gbp',
         quantity: 1
