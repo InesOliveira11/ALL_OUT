@@ -6,18 +6,20 @@ Rails.application.routes.draw do
 
   resources :activities, only: %i[index show] do
     resources :favourites, only: %i[create destroy]
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: %i[new create]
   end
 
-  resources :bookings, only: [:show]
-  resources :reviews
-  resources :favourites, only: %i[index]
+  resources :bookings, only: [:show] do
+    resources :reviews
+  end
+
+  resources :favourites, only: [:index]
 
   resources :questions do
-    resources :answers, only: [:new, :create]
+    resources :answers, only: %i[new create]
   end
 
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: %i[show create] do
     resources :payments, only: :new
   end
 
