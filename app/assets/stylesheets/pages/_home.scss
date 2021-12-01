@@ -11,3 +11,7 @@
   text-align: center;
   display:flex;
 }
+
+.full-page {
+  min-height: calc(100vh - 56px);
+}
