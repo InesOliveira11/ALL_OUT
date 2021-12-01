@@ -1,6 +1,6 @@
 require 'open-uri'
 last_question_id = if Question.all.count.zero?
-                    1
+                    0
                    else
                     Question.last.id
                    end
@@ -134,7 +134,7 @@ activity = Activity.new(
 file = URI.open("https://london.danslenoir.com/templates/yootheme/cache/SHOOTING_WEBSITE_13-13eee0fe.jpeg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Hungry", "Restaurant")
 
 activity = Activity.new(
   title: "The murdér express",
@@ -146,7 +146,7 @@ activity = Activity.new(
 file = URI.open("https://media.timeout.com/images/105449407/1372/772/image.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Restaurant")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Hungry", "Restaurant")
 
 activity = Activity.new(
   title: "Mercato Metropolitano",
@@ -158,7 +158,7 @@ activity = Activity.new(
 file = URI.open("https://www.efanews.eu/resources/800x800/868cfa3c866242613830e71caa4f6734.jpg.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Hungry", "Market")
 
 activity = Activity.new(
   title: "Bang Bang - Oriental Foodhall",
@@ -170,7 +170,7 @@ activity = Activity.new(
 file = URI.open("https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2017/07/27045341/bang-bang-oriental-food-hall-1024x683.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Hungry", "Market")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Hungry", "Market")
 
 activity = Activity.new(
   title: "Cahoots",
@@ -182,7 +182,7 @@ activity = Activity.new(
 file = URI.open("https://www.theworlds50best.com/discovery/filestore/jpg/Cahoots-London-UK-03.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Thirsty", "Bar")
 
 activity = Activity.new(
   title: "The Cauldron",
@@ -194,7 +194,7 @@ activity = Activity.new(
 file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Bar")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Thirsty", "Bar")
 
 activity = Activity.new(
   title: "Cirque le Soir",
@@ -206,7 +206,7 @@ activity = Activity.new(
 file = URI.open("https://www.royist.com/wp-content/uploads/2016/11/cirquelesoir-london-royist2-1200x900.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Thirsty", "Club")
 
 activity = Activity.new(
   title: "Silent Disco at The View from The Shard",
@@ -218,7 +218,7 @@ activity = Activity.new(
 file = URI.open("https://d32dbz94xv1iru.cloudfront.net/resize/1/images/events/by_uuid/53/53dede37-0194-475f-9420-04f8f32b2236-1500x900.jpg?width=960")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Food/Drinks", "Thirsty", "Club")
+create_activity_tags(activity, "Indoor", "Food/Drinks", "Thirsty", "Club")
 
 activity = Activity.new(
   title: "Money Heist - The Experience",
@@ -230,7 +230,7 @@ activity = Activity.new(
 file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
+create_activity_tags(activity, "Indoor", "Experiences", "Arts", "Film")
 
 activity = Activity.new(
   title: "Sherlock Holmes - The official Live Game",
@@ -242,4 +242,4 @@ activity = Activity.new(
 file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
 activity.photo.attach(io: file, filename: 'poster.png', content_type: 'image/png')
 activity.save!
-create_activity_tags(activity, "Indoors", "Experiences", "Arts", "Film")
+create_activity_tags(activity, "Indoor", "Experiences", "Arts", "Film")
