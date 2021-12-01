@@ -1,5 +1,7 @@
 <div class="m-3 text-center" data-controller="question">
-  <h1 class="favourite-text"><%= @question.question %></h1>
+  <div>
+    <h1 class="favourite-text"><%= @question.question %></h1>
+  </div>
 
   <%= simple_form_for [ @question, @answer ], html: { class: "d-none" },  data: { target: "question.form" } do |f| %>
     <%= f.input :selected_answer, input_html: { class: "tag-selector" },  item_wrapper_class: 'tag-item' %>
