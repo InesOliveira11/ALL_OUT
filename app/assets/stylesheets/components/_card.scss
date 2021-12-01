@@ -162,7 +162,7 @@
 :root {
   --color1: hsl(207, 19%, 9%);
   --color2: hsl(0, 0%, 100%);
-  --color3: #6A7EFC;
+  --color3: #B0244F;
 }
 
 *,
@@ -224,7 +224,7 @@
 
 .card-title::after {
   content: '';
-  //position: absolute;
+  position: absolute;
   height: 4px;
   left: calc(var(--padding) * -1);
   bottom: -2px;
@@ -249,16 +249,16 @@
 }
 
 .heart {
-  font-size: 30px;
+  font-size: 45px;
   position:relative;
   bottom: 60px;
   left: 280px;
-  color:#FF5656;
+  color:#B0244F;
 }
 
 .heart:hover {
   text-decoration: none;
-  color:#FF5656;
+  color:#B0244F;
 }
 // @media (prefers-reduced-motion: reduce) {
 //   *,

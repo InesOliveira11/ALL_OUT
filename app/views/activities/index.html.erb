@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3" style="background: white;">
   <% if current_user.answers.length > 0 %>
     <%= link_to "Delete my Preferences", activities_path(delete_answers: "true")  %>
   <% end %>
@@ -32,8 +32,8 @@
             <p><%= activity.description %></p>
             <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
             <p>Location: <%= activity.location %></p>
-            <div>
-              <%= link_to new_activity_booking_path(activity),  class: "btn btn-success" do %>
+            <div class="container-red-button">
+              <%= link_to new_activity_booking_path(activity),  class: "red-button" do %>
                 <span>Book now!</span>
               <% end %>
             </div>
@@ -42,4 +42,6 @@
       </div>
     </div>
   <% end %>
+  <br>
+  <br>
 </div>

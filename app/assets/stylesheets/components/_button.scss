@@ -51,3 +51,49 @@ code {
 }
 
 //end banner button animation
+
+// red-button
+
+.red-button {
+  background-color: #B0244F;
+  border: 2px solid #B0244F;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 2em;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: ease-in-out 0.2s;
+}
+
+.container-red-button a:hover{
+  color:white !important;
+  text-decoration: none !important;
+  padding: 0.7em 2.2em;
+  background-color: #6b1630;
+  border-color: #6b1630;
+}
+
+// blue-button
+
+.blue-button {
+  background-color: #336998;
+  border: 2px solid #336998;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 2em;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: ease-in-out 0.2s;
+}
+
+.container-blue-button a:hover{
+  color:white !important;
+  text-decoration: none !important;
+  padding: 0.7em 2.2em;
+  background-color: #244868;
+  border-color: #244868;
+}
