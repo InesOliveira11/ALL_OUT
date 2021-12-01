@@ -35,6 +35,14 @@
   //height: 100vh;
 }
 
+.fixed-top {
+  display: flex;
+  height: 60px;
+  left: 0;
+  right: 0;
+  bottom: 6;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
