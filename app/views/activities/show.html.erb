@@ -26,6 +26,7 @@
         <%= @activity.description %>
       </p>
       <p>Price: <%= humanized_money_with_symbol(@activity.price) %></p>
+
       <%= form_tag orders_path do %>
       <%= hidden_field_tag 'activity_id', @activity.id %>
       <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
