@@ -28,13 +28,8 @@
         <%= booking.activity.title %><br>
         <%= booking.activity.location %><br>
         <%= booking.date %><br>
-        <%= link_to '⭐', new_booking_review_path(booking) %>
-      <% end %><p>
 
-
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Leave the review
     </button>
 
@@ -48,9 +43,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
+            <div class="modal-body">
+              <%= simple_form_for [booking, @review] do |f| %>
+                <%= f.input :rating %>
+                <%= f.input :content %>
+              <% end %>
+            </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
@@ -58,6 +56,12 @@
         </div>
       </div>
     </div>
+      <% end %><p>
+
+
+
+    <!-- Button trigger modal -->
+
 
 
   </div>
