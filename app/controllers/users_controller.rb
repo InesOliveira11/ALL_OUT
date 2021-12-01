@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @user = User.find(params[:id])
     user_bookings = @user.bookings
     @bookings = []
