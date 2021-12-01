@@ -26,7 +26,7 @@
           <p>Last name: <span class="ruby-text"><%= @user.last_name %></span></p>
         </div>
         <div class="diplay-raw">
-          <p>Birth date: <span class="ruby-text"><%= @user.birth_date %></span></p>
+          <p>Birth date: <span class="ruby-text"><%= @user.birth_date.strftime("%m/%d/%Y") %></span></p>
         </div>
         <div class="diplay-raw">
           <p>Email: <span class="ruby-text"><%= @user.email %></span></p>
@@ -43,13 +43,12 @@
       <p><% @bookings.each do |booking| %>
         <%= booking.activity.title %><br>
         <%= booking.activity.location %><br>
-        <%= booking.date %><br>
+        <%= booking.date.strftime("%m/%d/%Y") %><br>
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Leave the review
     </button>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
