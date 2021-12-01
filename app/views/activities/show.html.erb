@@ -1,7 +1,7 @@
 <div class="activity-card" >
   <div class="activity-info m-1 " >
     <% if @activity.photo.present? %>
-      <div class="activity-image p-3 card center-all" style="background-image: url('<%= cl_image_path @activity.photo.key%>'); border-radius: 0;">
+      <div class="activity-image p-3 card center-all" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));background-image: url('<%= cl_image_path @activity.photo.key%>'); border-radius: 0;">
           <h3 style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @activity.title %></h3>
         </div>
         <div style="background-color:white;text-align:center;color:black" class="p-2 rounded-sm pb-3 mt-2">
