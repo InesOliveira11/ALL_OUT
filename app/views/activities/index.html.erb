@@ -1,4 +1,7 @@
 <div class="container mt-3">
+  <% if current_user.answers.length > 0 %>
+    <%= link_to "Delete my Preferences", activities_path(delete_answers: "true")  %>
+  <% end %>
   <div class="search-box mb-4">
     <% if params[:query].present? %>
       <%= form_tag activities_path, method: :get, class: "form-span" do %>
