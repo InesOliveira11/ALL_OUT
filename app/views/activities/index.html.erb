@@ -1,7 +1,9 @@
-<div class="container mt-3 full-page" style="background: white">
-  <% if current_user.answers.length > 0 %>
-    <%= link_to "Delete my Preferences", activities_path(delete_answers: "true")  %>
-  <% end %>
+<div class="container full-page" style="background: white">
+  <div class="center-all container-blue-button">
+    <% if current_user.answers.length > 0 %>
+      <%= link_to "Delete my Preferences", activities_path(delete_answers: "true"), class: "blue-button"  %>
+    <% end %>
+  </div>
   <div class="search-box mb-4">
     <% if params[:query].present? %>
       <%= form_tag activities_path, method: :get, class: "form-span" do %>
@@ -28,7 +30,7 @@
         <div class="card-content container">
           <h3 class="card-title"><%= activity.title %></h3>
           <div class="card-body">
-            <p>Rating: <%= activity.rating %></p>
+            <p><%= activity.rating %></p>
             <p><%= activity.description %></p>
             <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
             <p>Location: <%= activity.location %></p>

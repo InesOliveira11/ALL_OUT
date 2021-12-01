@@ -55,8 +55,7 @@ code {
 // red-button
 
 .red-button {
-  background-color: #B0244F;
-  border: 2px solid #B0244F;
+  border: 2px solid #6b1630 ;
   font: inherit;
   line-height: 1;
   margin: 0.5em;
@@ -65,6 +64,7 @@ code {
   margin-top: 20px;
   font-weight: bold;
   transition: ease-in-out 0.2s;
+  background: linear-gradient(#B0244F, #6b1630);
 }
 
 .container-red-button a:hover{
@@ -78,7 +78,6 @@ code {
 // blue-button
 
 .blue-button {
-  background-color: #336998;
   border: 2px solid #336998;
   font: inherit;
   line-height: 1;
@@ -88,6 +87,7 @@ code {
   margin-top: 20px;
   font-weight: bold;
   transition: ease-in-out 0.2s;
+  background: linear-gradient(#336998, #244868);
 }
 
 .container-blue-button a:hover{
@@ -96,4 +96,8 @@ code {
   padding: 0.7em 2.2em;
   background-color: #244868;
   border-color: #244868;
+}
+
+.btn {
+  color:white;
 }

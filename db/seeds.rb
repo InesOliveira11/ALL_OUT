@@ -128,7 +128,7 @@ activity = Activity.new(
   title: "Dans le noir?",
   description: "Located in the heart of London invites you to dine in complete darkness, accompanied and served by unexpected guides.",
   price_cents: "10000",
-  rating: "4.5",
+  rating: "⭐️⭐️⭐️⭐️",
   location: "69-73 St John Street, London EC1M 4AN"
 )
 file = URI.open("https://london.danslenoir.com/templates/yootheme/cache/SHOOTING_WEBSITE_13-13eee0fe.jpeg")
@@ -140,7 +140,7 @@ activity = Activity.new(
   title: "The murdér express",
   description: "Enjoy a meal cooked by a MasterChef inside a 19th century train carriage on The Murdér Express.",
   price_cents: "6500",
-  rating: "3.0",
+  rating: "⭐️⭐️⭐️",
   location: "Arch 63 Pedley Street, London E1 5BW"
 )
 file = URI.open("https://media.timeout.com/images/105449407/1372/772/image.jpg")
@@ -152,7 +152,7 @@ activity = Activity.new(
   title: "Mercato Metropolitano",
   description: "Mercato Metropolitano is London’s first sustainable community market. Has incubated more than 40 food and beverage businesses, a delicatessen with sustainably sourced products from local farmers and artisans, a unique cinema experience, a communal kitchen and several circular economy concepts including a Bavarian micro-brewery.",
   price_cents: "2000",
-  rating: "5.0",
+  rating: "⭐️⭐️⭐️⭐️⭐️",
   location: "42 Newington Causeway, London SE1 6DR"
 )
 file = URI.open("https://www.efanews.eu/resources/800x800/868cfa3c866242613830e71caa4f6734.jpg.jpg")
@@ -164,7 +164,7 @@ activity = Activity.new(
   title: "Bang Bang - Oriental Foodhall",
   description: "The Bang Bang Oriental Foodhall is the newest and largest Asian food court in London, and boasts the widest range of specialist Asian restaurants in the whole of the UK.",
   price_cents: "4000",
-  rating: "3.0",
+  rating: "⭐️⭐️⭐️",
   location: "399 Edgware Road, Colindale, London NW9 0FH"
 )
 file = URI.open("https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2017/07/27045341/bang-bang-oriental-food-hall-1024x683.jpg")
@@ -176,7 +176,7 @@ activity = Activity.new(
   title: "Cahoots",
   description: "Cahoots is a 1940s-themed bar located in the heart of London’s Soho. Set inside an abandoned train station, the scoundrels of this station-speakeasy serve up spiffing cocktails, jolly-good rations and live swinging entertainment seven days a week.",
   price_cents: "3000",
-  rating: "5.0",
+  rating: "⭐️⭐️⭐️⭐️⭐️",
   location: "13 Kingly Ct, Carnaby, London W1B 5PW"
 )
 file = URI.open("https://www.theworlds50best.com/discovery/filestore/jpg/Cahoots-London-UK-03.jpg")
@@ -188,7 +188,7 @@ activity = Activity.new(
   title: "The Cauldron",
   description: "The Cauldron is an immersive cocktail-making class where guests use science and technology to make magic real. Come and brew some molecular cocktails with working magic wands!",
   price_cents: "3500",
-  rating: "4.0",
+  rating: "⭐️⭐️⭐️⭐️",
   location: "5d Stoke Newington Rd, London N16 8BH"
 )
 file = URI.open("https://vedcdn.imgix.net/images/product/large/immersive-magical-cocktail-experience-27130001.jpg?auto=compress,format")
@@ -200,7 +200,7 @@ activity = Activity.new(
   title: "Cirque le Soir",
   description: "Plush, circus-themed nightclub with DJs, burlesque snake charmers, fire eaters and indoor funfair.",
   price_cents: "15000",
-  rating: "4.0",
+  rating: "⭐️⭐️⭐️⭐️",
   location: "15-21 Ganton St, Carnaby, London W1F 9BN"
 )
 file = URI.open("https://www.royist.com/wp-content/uploads/2016/11/cirquelesoir-london-royist2-1200x900.jpg")
@@ -212,7 +212,7 @@ activity = Activity.new(
   title: "Silent Disco at The View from The Shard",
   description: "The silent disco phenomenon reaches new heights at these exclusive Time Out events. Pick your vibe and choose your side as three DJs battle it out over separate wireless channels, playing the best in pop, rock and party classics, while you dance the night away 1,000ft in th air.",
   price_cents: "4000",
-  rating: "5.0",
+  rating: "⭐️⭐️⭐️⭐️⭐️",
   location: "32 London Bridge St, London SE1 9SG"
 )
 file = URI.open("https://d32dbz94xv1iru.cloudfront.net/resize/1/images/events/by_uuid/53/53dede37-0194-475f-9420-04f8f32b2236-1500x900.jpg?width=960")
@@ -224,7 +224,7 @@ activity = Activity.new(
   title: "Money Heist - The Experience",
   description: "In Money Heist: The Experience you’ll live out the first ever international robbery in person. Take part in this immersive experience full of special effects and endless surprises.",
   price_cents: "4500",
-  rating: "4.0",
+  rating: "⭐️⭐️⭐️⭐️",
   location: "79-85 Old Brompton Road, London SW7 3LD"
 )
 file = URI.open("https://offloadmedia.feverup.com/secretmiami.com/wp-content/uploads/2021/06/03043751/Copy-of-NC_LCDP_Careta5-1024x576.jpg")
@@ -236,7 +236,7 @@ activity = Activity.new(
   title: "Sherlock Holmes - The official Live Game",
   description: "Experience our immersive Sherlock Escape Room, and solve London's new murder mystery.",
   price_cents: "4000",
-  rating: "4.0",
+  rating: "⭐️⭐️⭐️⭐️",
   location: "79-85 Old Brompton Road, London SW7 3LD"
 )
 file = URI.open("https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItZTVmZjE0MTdjMjJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTQ4NTc5OTU@._V1_FMjpg_UX1000_.jpg")
