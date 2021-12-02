@@ -115,12 +115,12 @@ def create_activity_tags(activity, top_level, second_level, third_level, fourth_
 end
 
 user = User.new(
-  first_name: "Admin",
-  last_name: "Admin",
-  email: "admin@com",
-  password: "123456admin",
+  first_name: "Inês",
+  last_name: "Oliveira",
+  email: "ines.oliveira@gmail.com",
+  password: "123456ines",
   address: "138 Kingsland Rd",
-  birth_date: "19.07.1991"
+  birth_date: "14.09.1989"
 )
 user.save!
 
