@@ -5,7 +5,10 @@
           <h3 style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @activity.title %></h3>
         </div>
         <div style="background-color:white;text-align:center;color:black" class="p-2 rounded-sm pb-3 mt-2">
-          <p><strong>Rating:</strong><%= @activity.rating %></p>
+          <p> <% (@activity.rating).to_i.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+          </p>
           <p><strong>Description:</strong>
             <%= @activity.description %>
           </p>
@@ -24,7 +27,7 @@
       <p>
         <strong>Description:</strong>
         <%= @activity.description %>
-      </p>          
+      </p>
       <p><strong>Price:</strong> <%= humanized_money_with_symbol(@activity.price) %></p>
       <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
         <span>Book now!</span>
