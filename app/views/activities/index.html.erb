@@ -1,7 +1,7 @@
 <div class="container full-page" style="background: white">
-  <div class="center-all container-blue-button">
+  <div style="height: 80px" class="center-all container-purple-button">
     <% if current_user.answers.length > 0 %>
-      <%= link_to "Delete my Preferences", activities_path(delete_answers: "true"), class: "blue-button"  %>
+      <%= link_to "#nofilter", activities_path(delete_answers: "true"), class: "purple-button"  %>
     <% end %>
   </div>
   <div class="search-box mb-4 mt-3">
