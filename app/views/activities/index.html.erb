@@ -4,7 +4,7 @@
       <%= link_to "Delete my Preferences", activities_path(delete_answers: "true"), class: "blue-button"  %>
     <% end %>
   </div>
-  <div class="search-box mb-4">
+  <div class="search-box mb-4 mt-3">
     <% if params[:query].present? %>
       <%= form_tag activities_path, method: :get, class: "form-span" do %>
         <%= text_field_tag :query,
@@ -36,8 +36,8 @@
                 <% end %>
               </div>
             <p><%= activity.description %></p>
-            <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
-            <p>Location: <%= activity.location %></p>
+            <p><%= humanized_money_with_symbol(activity.price) %></p>
+            <p><i class="fas fa-map-marker-alt"></i>  <%= activity.location %></p>
             <div class="container-red-button">
               <%= link_to new_activity_booking_path(activity),  class: "red-button" do %>
                 <span>Book now!</span>

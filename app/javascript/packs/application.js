@@ -21,7 +21,6 @@ import "bootstrap"
 import swal from 'sweetalert'
 import { initStarRating } from '../plugins/init_star_rating';
 
-
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
 
