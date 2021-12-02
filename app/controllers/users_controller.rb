@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     user_bookings.each do |booking|
       @bookings << booking if booking.order.state == "paid"
     end
+    @previous_bookings = @bookings.select { |b| b.date < Date.today }
+    @current_bookings = @bookings.select { |b| b.date >= Date.today }
   end
 
   # def new
