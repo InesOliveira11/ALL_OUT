@@ -67,4 +67,6 @@ Rails.application.configure do
   protocol: ENV['APP_HOST'] ? 'https' : 'http'
 }
   config.hosts << /[^.]*\.loca\.lt/
+
+  config.assets.check_precompiled_asset = false
 end

@@ -250,14 +250,22 @@
 .heart {
   font-size: 45px;
   position:relative;
-  bottom: 60px;
-  left: 280px;
+  bottom: 50px;
+  left: 250px;
   color:#B0244F;
+  border-radius: 50%;
 }
 
 .heart:hover {
   text-decoration: none;
   color:#B0244F;
+}
+
+.card i {
+  border-radius: 50%;
+  background-color: #eaebf0;
+  padding: 8px 10px;
+  opacity: .8;
 }
 // @media (prefers-reduced-motion: reduce) {
 //   *,
