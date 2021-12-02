@@ -32,8 +32,8 @@
           <div class="card-body">
             <p>Rating:<%= activity.rating %></p>
             <p><%= activity.description %></p>
-            <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
-            <p>Location: <%= activity.location %></p>
+            <p><%= humanized_money_with_symbol(activity.price) %></p>
+            <p><i class="fas fa-map-marker-alt"></i>  <%= activity.location %></p>
             <div class="container-red-button">
               <%= link_to new_activity_booking_path(activity),  class: "red-button" do %>
                 <span>Book now!</span>

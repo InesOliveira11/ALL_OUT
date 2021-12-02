@@ -15,3 +15,10 @@
 .full-page {
   min-height: calc(100vh - 56px);
 }
+
+.body-background {
+  background-image: url(assets/background-grey);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
