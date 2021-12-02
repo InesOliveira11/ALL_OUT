@@ -1,7 +1,7 @@
-<div class="container pt-5">
+<div class="container pt-5 center-all">
   <div class="search-box row justify-content-center">
     <div class="col-12 col-md-6 col-lg-4">
-    <h1 class="text-center mb-5">When do you want to go?</h1>
+    <h1 class="text-center mb-5 mt-3">When do you want to go?</h1>
 
   <%= simple_form_for [ @activity, @booking ] do |f| %>
   <%= f.error_notification %>
@@ -11,7 +11,7 @@
     <%= f.input :date, as: :datetime, html5: true %>
   </div>
 
-  <div class="row justify-content-center">
+  <div class="row justify-content-center container-blue-button">
     <%= f.button :submit , class: "blue-button"%>
   </div>
 <% end %>
