@@ -18,7 +18,7 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
-import swal from 'sweetalert'
+import swal from "sweetalert"
 
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".review-submit")) {
