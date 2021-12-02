@@ -29,8 +29,12 @@
         <% end %>
         <div class="card-content container">
           <h3 class="card-title"><%= activity.title %></h3>
-          <div class="card-body">
-            <p>Rating:<%= activity.rating %></p>
+            <div class="card-body">
+              <div class="stars">
+                <% (activity.rating).to_i.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              </div>
             <p><%= activity.description %></p>
             <p><%= humanized_money_with_symbol(activity.price) %></p>
             <p><i class="fas fa-map-marker-alt"></i>  <%= activity.location %></p>

@@ -18,9 +18,12 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
-import swal from "sweetalert"
+import swal from 'sweetalert'
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
+  initStarRating();
+
   if (document.querySelector(".review-submit")) {
     const submitButton = document.querySelector(".review-submit")
     submitButton.addEventListener("click", event => {
@@ -34,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
       })
     })
   }
+
 })
