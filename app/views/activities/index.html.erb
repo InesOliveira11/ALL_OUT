@@ -21,16 +21,16 @@
 
   <% @activities.each do |activity| %>
     <div class="mb-5">
-      <div class="card" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
+      <div class="card" id="activity-<%= activity.id %>" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
         <% if activity.favourites.exists? %>
-          <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, class: "heart" %>
+          <%= link_to '♥︎', activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, remote: true, class: "heart" %>
         <% else %>
-          <%= link_to '♡', activity_favourites_path(activity), method: :post, class: "heart" %>
+          <%= link_to '♡', activity_favourites_path(activity), method: :post, remote: true, class: "heart" %>
         <% end %>
         <div class="card-content container">
           <h3 class="card-title"><%= activity.title %></h3>
           <div class="card-body">
-            <p><%= activity.rating %></p>
+            <p>Rating:<%= activity.rating %></p>
             <p><%= activity.description %></p>
             <p>Price: <%= humanized_money_with_symbol(activity.price) %></p>
             <p>Location: <%= activity.location %></p>

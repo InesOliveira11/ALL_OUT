@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
         payment_method_types: ['card'],
         line_items: [{
           name: @activity.title,
-          images: [Cloudinary::Utils.cloudinary_url(@activity.photo)],
+          images: [@activity.photo.service_url(secure: true)],
           amount: @activity.price_cents,
           currency: 'gbp',
           quantity: 1

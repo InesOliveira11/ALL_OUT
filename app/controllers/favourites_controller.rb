@@ -1,5 +1,4 @@
 class FavouritesController < ApplicationController
-
   def index
     @favourites = Favourite.all
   end
@@ -14,16 +13,13 @@ class FavouritesController < ApplicationController
     @favourite.user = current_user
     @favourite.activity = @activity
     if @favourite.save!
-      redirect_to request.referrer
-    # else
-    #   render :new
+      redirect_to activities_path(anchor: "activity-#{@activity.id}")
     end
   end
 
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_to request.referrer
-    #redirect_to favourites_url, notice: 'Restaurant was successfully destroyed.'
+    redirect_to activities_path(anchor: "activity-#{@favourite.activity.id}")
   end
 end
