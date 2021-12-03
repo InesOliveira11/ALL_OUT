@@ -4,6 +4,13 @@
   min-height: calc(100vh - 56px);
 }
 
+.body-background {
+  background-image: url('background-grey.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .center-all {
   justify-content: center;
   align-content: center;
