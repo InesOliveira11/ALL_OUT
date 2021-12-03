@@ -22,7 +22,7 @@
   <% @activities.each do |activity| %>
     <div class="mb-5">
       <div class="card mx-2" id="activity-<%= activity.id %>" style="background-image: url(<%= cl_image_path activity.photo.key %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
-      <div class="heart-container">
+        <div class="heart-container">
           <% if activity.favourites.exists? %>
             <%= link_to activity_favourite_path(activity_id: activity, id: activity.favourites.first), method: :delete, remote: true, class: "heart" do %>
               <i class="fas fa-heart"></i>
@@ -41,15 +41,15 @@
                   <i class="fas fa-star"></i>
                 <% end %>
               </div>
-            <p><%= activity.description %></p>
-            <p><%= humanized_money_with_symbol(activity.price) %></p>
-            <p><i class="fas fa-map-marker-alt"></i>  <%= activity.location %></p>
-            <div class="container-red-button">
-              <%= link_to new_activity_booking_path(activity),  class: "red-button" do %>
-                <span>Book now!</span>
-              <% end %>
+              <p><%= activity.description %></p>
+              <p><%= humanized_money_with_symbol(activity.price) %></p>
+              <p><i class="fas fa-map-marker-alt"></i>  <%= activity.location %></p>
+              <div class="container-red-button">
+                <%= link_to new_activity_booking_path(activity),  class: "red-button" do %>
+                  <span>Book now!</span>
+                <% end %>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

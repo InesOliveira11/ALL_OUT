@@ -1,18 +1,18 @@
 <div class="bottom-nav  d-flex justify-content-evenly">
-    <%= link_to root_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'home' } " do %>
-      <i class="fas fa-home"></i>
-    <% end %>
-    <%= link_to activities_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
-      <i class="far fa-smile-wink"></i>
-    <% end %>
-    <%= link_to favourites_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'favourites' && params[:action] == 'index' } " do %>
-      <i class="fas fa-heart"></i>
-    <% end %>
-    <%= link_to search_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'search' } " do %>
-      <i class="fas fa-search"></i>
-    <% end %>
+  <%= link_to root_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'home' } " do %>
+    <i class="fas fa-home"></i>
+  <% end %>
+  <%= link_to activities_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'activities' && params[:action] == 'index' } " do %>
+    <i class="far fa-smile-wink"></i>
+  <% end %>
+  <%= link_to favourites_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'favourites' && params[:action] == 'index' } " do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+  <%= link_to search_path, class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'pages' && params[:action] == 'search' } " do %>
+    <i class="fas fa-search"></i>
+  <% end %>
 
-    <%= link_to user_path(current_user || 0), class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'users' && params[:action] == 'show' } " do %>
-      <i class="fas fa-user"></i>
-    <% end %>
+  <%= link_to user_path(current_user || 0), class: "p-3 default-color #{ 'nav-active' if params[:controller] == 'users' && params[:action] == 'show' } " do %>
+    <i class="fas fa-user"></i>
+  <% end %>
 </div>

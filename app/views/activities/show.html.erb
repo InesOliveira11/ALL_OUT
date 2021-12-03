@@ -1,41 +1,51 @@
 <div class="activity-card" >
-  <div class="activity-info m-1 " >
+  <div class="activity-info m-1" >
     <% if @activity.photo.present? %>
       <div class="activity-image p-3 card center-all" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));background-image: url('<%= cl_image_path @activity.photo.key%>'); border-radius: 0;">
-          <h3 style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @activity.title %></h3>
-        </div>
-        <div style="background-color:white;text-align:center;color:black" class="p-2 rounded-sm pb-3 mt-2">
-          <p> <% (@activity.rating).to_i.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-          </p>
-          <p>
-            <%= @activity.description %>
-          </p>
-          <p><strong>Price:</strong> <%= humanized_money_with_symbol(@activity.price) %></p>
-          <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
-            <span>Book now!</span>
-          <% end %>
-        </div>
+        <h3 style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @activity.title %></h3>
+      </div>
+      <div style="background-color:white;text-align:center;color:black" class="p-2 rounded-sm pb-3 mt-2">
+        <p>
+        <% (@activity.rating).to_i.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        </p>
+        <p>
+          <%= @activity.description %>
+        </p>
+        <p>
+          <strong>Price:</strong>
+          <%= humanized_money_with_symbol(@activity.price) %>
+        </p>
+        <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
+          <span>Book now!</span>
+        <% end %>
+      </div>
     <% else %>
     <div class="background-card-image card" style="background-image: url('https://source.unsplash.com/featured/?activity')"></div>
       <p>
         <strong>Title:</strong>
         <%= @activity.title %>
       </p>
-      <p><strong>Rating:</strong><%= @activity.rating %></p>
+      <p>
+        <strong>Rating:</strong>
+        <%= @activity.rating %>
+      </p>
       <p>
         <strong>Description:</strong>
         <%= @activity.description %>
       </p>
-      <p><strong>Price:</strong> <%= humanized_money_with_symbol(@activity.price) %></p>
+      <p>
+        <strong>Price:</strong>
+        <%= humanized_money_with_symbol(@activity.price) %>
+      </p>
       <%= link_to new_activity_booking_path(@activity),  class: "red-button" do %>
         <span>Book now!</span>
       <% end %>
     </div>
   <% end %>
 </div>
-  <div class="activity-map center-all p-0 mt-2 m-1" >
+<div class="activity-map center-all p-0 mt-2 m-1" >
   <div style="width: 100%; height: 280px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -43,5 +53,4 @@
     <strong>Location:</strong>
     <%= @activity.location %>
   </div>
-</div>
 </div>
