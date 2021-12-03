@@ -35,7 +35,7 @@ question_4.photos.attach(io: URI.open("https://source.unsplash.com/featured/?foo
 question_4.photos.attach(io: URI.open("https://source.unsplash.com/featured/?drinks"), filename: 'poster2.png', content_type: 'image/png')
 question_4.save!
 
-question_5 = Question.create(question: 'What type of experience would you like to have?', answer_1: "Sports", next_question_1: last_question_id + 10, answer_2: "Arts", next_question_2: last_question_id + 11)
+question_5 = Question.create(question: 'Would you prefer...', answer_1: "Sports", next_question_1: last_question_id + 10, answer_2: "Arts", next_question_2: last_question_id + 11)
 question_5.photos.attach(io: URI.open("https://source.unsplash.com/featured/?sports"), filename: 'poster1.png', content_type: 'image/png')
 question_5.photos.attach(io: URI.open("https://source.unsplash.com/featured/?arts"), filename: 'poster2.png', content_type: 'image/png')
 question_5.save!
@@ -45,7 +45,7 @@ question_6.photos.attach(io: URI.open("https://source.unsplash.com/featured/?foo
 question_6.photos.attach(io: URI.open("https://source.unsplash.com/featured/?drinks"), filename: 'poster2.png', content_type: 'image/png')
 question_6.save!
 
-question_7 = Question.create(question: 'What type of experience would you like to have?', answer_1: "Sports", next_question_1: last_question_id + 14, answer_2: "Arts", next_question_2: last_question_id + 15)
+question_7 = Question.create(question: 'Would you prefer...', answer_1: "Sports", next_question_1: last_question_id + 14, answer_2: "Arts", next_question_2: last_question_id + 15)
 question_7.photos.attach(io: URI.open("https://source.unsplash.com/featured/?sports"), filename: 'poster1.png', content_type: 'image/png')
 question_7.photos.attach(io: URI.open("https://source.unsplash.com/featured/?arts"), filename: 'poster2.png', content_type: 'image/png')
 question_7.save!
